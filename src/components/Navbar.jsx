@@ -1,14 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { ThemeContext } from "../context/ThemeContext";
 import { motion } from "framer-motion";
 import logo from "../assets/logo.png"; // Only One Image
 
 const Navbar = () => {
-  const [darkMode, setDarkMode] = useState(true);
+  const { darkMode, setDarkMode } = useContext(ThemeContext);
   const [dropdownOpen, setDropdownOpen] = useState(false); // Dropdown state
 
   return (
     <nav
-      className={`w-full flex items-center justify-between px-6 py-3 shadow-lg transition-all duration-500 ${darkMode ? "bg-gray-900 text-white" : "bg-[#ccc] text-black"
+      className={`fixed top-0 left-0 w-full flex items-center justify-between px-6 py-3 shadow-lg transition-all duration-500 ${darkMode ? "bg-gray-900 text-white" : "bg-[#ccc] text-black"
         }`}
     >
 

@@ -166,9 +166,13 @@ console.log(isEven(7));  // Output: Odd
   const [selectedQuestion, setSelectedQuestion] = useState(questions[0]);
 
   return (
-    <div className="flex">
+    <div className="flex w-full">
+      <div className="w-[20%] ">
       <Sidebar questions={questions} onSelect={setSelectedQuestion} />
+      </div>
+      <div className="w-[80%]">
       <QuestionSolution question={selectedQuestion} />
+      </div>
     </div>
   );
 };
