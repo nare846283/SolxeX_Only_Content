@@ -1,19 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { ThemeContext } from "../context/ThemeContext";
 import Sidebar from "../components/Sidebar";
 import QuestionSolution from "../components/QuestionSolution";
+import { hardQuestions } from "../data/hardQuestions";
 
 const Hard = () => {
-  const questions = [
-    { title: "Find Fibonacci Series", solution: "function fibonacci(n) { let a = 0, b = 1, temp; while (n-- > 0) { temp = a; a = b; b += temp; } return a; }" },
-    { title: "Find GCD of Two Numbers", solution: "function gcd(a, b) { return b === 0 ? a : gcd(b, a % b); }" },
-  ];
-
-  const [selectedQuestion, setSelectedQuestion] = useState(questions[0]);
+  const { darkMode } = useContext(ThemeContext);
+  const [selectedQuestion, setSelectedQuestion] = useState(null);
 
   return (
-    <div className="flex h-screen">
-      <Sidebar questions={questions} onSelect={setSelectedQuestion} />
-      <QuestionSolution question={selectedQuestion} />
+    <div className={`flex h-screen transition-all duration-300 ${darkMode ? "bg-gray-900 text-white" : "bg-gray-100 text-black"}`}>
+      <Sidebar data={hardQuestions} onSelect={setSelectedQuestion} />
+      
+      <div className="flex-1 flex items-start justify-center text-md font-semibold">
+        {selectedQuestion ? (
+          <QuestionSolution question={selectedQuestion} />
+        ) : (
+          <p className="text-gray-500 mt-72">❗ Select a question from the sidebar to view solution</p>
+        )}
+      </div>
     </div>
   );
 };

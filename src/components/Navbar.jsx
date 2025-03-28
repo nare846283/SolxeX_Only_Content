@@ -1,111 +1,151 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 import { ThemeContext } from "../context/ThemeContext";
 import { motion } from "framer-motion";
-import logo from "../assets/logo.png"; // Only One Image
+import { FaMoon, FaSun } from "react-icons/fa";
+import logo from "../assets/logo.png";
 
 const Navbar = () => {
   const { darkMode, setDarkMode } = useContext(ThemeContext);
-  const [dropdownOpen, setDropdownOpen] = useState(false); // Dropdown state
+  const location = useLocation();
+
+  // ✅ Check if Sidebar Pages
+  const isSidebarPage = ["/easy", "/medium", "/hard", "/beginner", "/intermediate", "/advance"].some((path) =>
+    location.pathname.startsWith(path)
+  );
+
+  // ✅ Full Width Navbar for Home, Problems, Projects
+  const isFullWidth = ["/", "/problems", "/projects"].includes(location.pathname);
+
+  const navbarBg = darkMode
+    ? "linear-gradient(90deg, #ff007f, #ff4d4d)"
+    : "linear-gradient(90deg, #00eaff, #007bff)";
+  const textColor = "white";
 
   return (
-    <nav
-      className={`fixed top-0 left-0 w-full flex items-center justify-between px-6 py-3 shadow-lg transition-all duration-500 ${darkMode ? "bg-gray-900 text-white" : "bg-[#ccc] text-black"
-        }`}
-    >
+    <>
+      {/* ✅ Large Screen Navbar */}
+      <nav
+        className={`hidden sm:flex z-20 fixed ${isFullWidth ? "left-0 w-full" : "left-[20%] w-[80%]"} items-center justify-between px-6 py-2 transition-all duration-300`}
+        style={{ color: textColor }}
+      >
+        {/* ✅ Logo (Always Left) */}
+        <div className="flex items-center space-x-4">
+          <NavLink to="/">
+            <motion.img
+              src={logo}
+              alt="SolveX Logo"
+              className="h-14"
+              style={{ filter: `drop-shadow(0px 0px 10px ${darkMode ? "#ff007f" : "#00eaff"})` }}
+              animate={{ scale: [1, 1.05, 1] }}
+              transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+            />
+          </NavLink>
+        </div>
 
-      <div className="flex items-center space-x-4">
-        <a href="/">
-          <motion.img
-            src={logo}
-            alt="SolveX Logo"
-            className="h-14"
-            style={{
-              filter: `drop-shadow(0px 0px 10px ${darkMode ? "#ff007f" : "#00eaff"
-                })`,
-            }}
-            animate={{
-              scale: [1, 1.05, 1],
-              filter: [
-                "drop-shadow(0px 0px 10px #ff007f)",
-                "drop-shadow(0px 0px 20px #00eaff)",
-              ],
-            }}
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              ease: "linear",
-            }}
-          />
-        </a>
-      </div>
+        {/* ✅ Navigation Links */}
+        <ul className="flex space-x-6 text-lg py-2 px-6 rounded-2xl" style={{ background: navbarBg, color: textColor }}>
+          <motion.li whileHover={{ scale: 1.1 }} transition={{ duration: 0.5 }}>
+            <NavLink to="/" className="text-white">Home</NavLink>
+          </motion.li>
 
-      <ul className="flex space-x-6 text-lg">
-        {["Home", "About", "Contact"].map(
-          (item, index) => (
-            <motion.li
-              key={index}
-              className={`cursor-pointer ${darkMode ? "text-white" : "text-gray-900"
-                }`}
-              initial={{ scale: 1 }}
-              whileHover={{
-                scale: 1.1,
-                color: darkMode ? "#ff007f" : "#007bff",
-              }}
-              animate={{
-                color: darkMode ? "white" : "#1f2937"
-              }}
-              transition={{ duration: 0.3 }}
-            >
-              <a href={`/${item.toLowerCase()}`}>{item}</a>
-            </motion.li>
-          )
-        )}
-        <motion.li
-          className="cursor-pointer relative text-gray-700 dark:text-gray-300"
-          onMouseEnter={() => setDropdownOpen(true)}
-          whileHover={{ scale: 1.1, color: "#ff007f" }}
-          transition={{ duration: 0.5 }}
-        >
-          <a href="#">Problems</a>
-          {dropdownOpen && (
+          {/* ✅ Projects Dropdown */}
+          <motion.li className="relative group" whileHover={{ scale: 1.1 }} transition={{ duration: 0.5 }}>
+            <NavLink to="/projects" className="text-white">Projects</NavLink>
             <motion.ul
-              className="absolute left-0 mt-2 w-40 bg-white dark:bg-gray-800 shadow-lg rounded-md"
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.3 }}
+              className="absolute left-0 mt-2 w-40 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-100"
+              style={{ background: navbarBg }}
+            >
+              {["Beginner", "Intermediate", "Advance"].map((level, index) => (
+                <motion.li
+                  key={index}
+                  className="px-4 py-2 cursor-pointer transition-all duration-100"
+                  whileHover={{ backgroundColor: "white", color: "black" }}
+                >
+                  <NavLink to={`/${level.toLowerCase()}`} className="w-full block">
+                    {level}
+                  </NavLink>
+                </motion.li>
+              ))}
+            </motion.ul>
+          </motion.li>
+
+          {/* ✅ Problems Dropdown */}
+          <motion.li className="relative group" whileHover={{ scale: 1.1 }} transition={{ duration: 0.5 }}>
+            <NavLink to="/problems" className="text-white">Problems</NavLink>
+            <motion.ul
+              className="absolute left-0 mt-2 w-40 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-100"
+              style={{ background: navbarBg }}
             >
               {["Easy", "Medium", "Hard"].map((level, index) => (
                 <motion.li
                   key={index}
-                  className="px-4 py-2 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-700"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.3 }}
-                  onClick={() => setDropdownOpen(false)}
+                  className="px-4 py-2 cursor-pointer transition-all duration-100"
+                  whileHover={{ backgroundColor: "white", color: "black" }}
                 >
-                  <a href={`${level.toLowerCase()}`}>{level}</a>
+                  <NavLink to={`/${level.toLowerCase()}`} className="w-full block">
+                    {level}
+                  </NavLink>
                 </motion.li>
               ))}
             </motion.ul>
-          )}
-        </motion.li>
-      </ul>
+          </motion.li>
+        </ul>
 
-      <motion.button
-        className="px-4 py-2 rounded-md transition-all duration-300 text-white"
-        style={{
-          background: darkMode
-            ? "linear-gradient(90deg, #ff007f, #ff4d4d)"
-            : "linear-gradient(90deg, #00eaff, #007bff)",
-        }}
-        onClick={() => setDarkMode(!darkMode)}
-        whileTap={{ scale: 0.9 }}
-        animate={{ opacity: [0.6, 1] }}
-        transition={{ duration: 0.5 }}
+        {/* ✅ Dark Mode Toggle (Always on Right) */}
+        <motion.button
+          className="px-4 py-2 rounded-md transition-all duration-300"
+          style={{ background: navbarBg, color: textColor }}
+          onClick={() => setDarkMode(!darkMode)}
+          whileTap={{ scale: 0.9 }}
+          animate={{ opacity: [0.6, 1] }}
+          transition={{ duration: 0.1 }}
+        >
+          {darkMode ? "Light" : "Dark"}
+        </motion.button>
+      </nav>
+
+     {/* ✅ Small Screen Navbar */}
+        <nav
+          className="sm:hidden z-20 fixed top-0 left-0 w-full flex items-center justify-between px-4 py-8 transition-all duration-300 bg-transparent"
+          style={{ color: textColor }}
+        >
+          {/* ✅ Logo (Left for Home/Projects/Problems, Center for Sidebar Pages) */}
+        <div className={`absolute ${isSidebarPage ? "left-1/2 transform -translate-x-1/2" : "left-4"}`}>
+          <NavLink to="/">
+            <motion.img
+              src={logo}
+              alt="SolveX Logo"
+              className="h-12"
+              style={{ filter: `drop-shadow(0px 0px 10px ${darkMode ? "#ff007f" : "#00eaff"})` }}
+              animate={{ scale: [1, 1.05, 1] }}
+              transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+            />
+          </NavLink>
+        </div>
+
+        {/* ✅ Dark Mode Toggle (Always on Right) */}
+        <motion.button className="text-2xl absolute right-4" onClick={() => setDarkMode(!darkMode)}>
+          {darkMode ? <FaSun className="text-yellow-400" /> : <FaMoon className="text-gray-300" />}
+        </motion.button>
+      </nav>
+
+      {/* ✅ Small Screen Navigation Links */}
+      <ul className="sm:hidden flex justify-center w-[96%] space-x-6 mt-16 ml-2 py-2 px-6 rounded-2xl absolute bottom-4"
+        style={{ background: navbarBg, color: textColor }}
       >
-        {darkMode ? "Light" : "Dark"}
-      </motion.button>
-    </nav>
+        <motion.li whileHover={{ scale: 1.1 }} transition={{ duration: 0.5 }}>
+          <NavLink to="/" className="text-white">Home</NavLink>
+        </motion.li>
+
+        {/* ✅ Projects & Problems Dropdowns */}
+        {["Projects", "Problems"].map((section, idx) => (
+          <motion.li key={idx} className="relative group" whileHover={{ scale: 1.1 }} transition={{ duration: 0.5 }}>
+            <NavLink to={`/${section.toLowerCase()}`} className="text-white">{section}</NavLink>
+          </motion.li>
+        ))}
+      </ul>
+    </>
   );
 };
 

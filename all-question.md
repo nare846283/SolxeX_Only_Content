@@ -1,221 +1,217 @@
-Easy Level
-Ye wale questions basic concepts cover karte hain jo beginners ke liye perfect hain.
+🟢 Easy Level Questions
+1️⃣ Basic Operations & Type Coercion
+    Q-1. Sum of Two Integers
 
-1. Basic Operations & Type Coercion
+    Q-2. Relation Between Integer and String
 
-    Q-1. Sum of two integers
+    Q-3. Sum and Message (Type Coercion)
 
-    Q-2. Relation between integer and string
+    Q-4. Greet the User
 
-    Q-3. Sum and message (Type Coercion)
+    Q-5. Accept and Print the Answer
 
-    Q-4. Greet the user
-
-    Q-5. Accept and print the answer
-
-    Q-6. Swap two variables via 3 methods
+    Q-6. Swap Two Variables via 3 Methods
 
     Q-7. Operators (+, -, *, %, /, >, <, >=, <=, !=, &&, ||, ++, --)
 
-2. Math Functions & Basic Problems
-
-    Math functions 
-        1. Math.round(), 
-        2. Math.ceil(), 
-        3. Math.floor(), 
-        4. Math.trunc(), 
-        5. Math.pow(), 
-        6. Math.sqrt(), 
-        7. Math.abs(), 
-        8. Math.max(), 
-        9. Math.min(), 
-        10. Math.random(), 
-        11. toFixed()
-
+2️⃣ Math Functions & Problems
     Q-8. Generate OTP
 
-    Q-9. Accept two numbers and print the greatest
+    Q-9. Accept Two Numbers and Print the Greatest
 
-    Q-10. Accept an integer and check even/odd
+    Q-10. Accept an Integer and Check Even/Odd
 
-    Q-11. Accept name and age, check voter eligibility
+    Q-11. Accept Name and Age, Check Voter Eligibility
 
-    Q-12. Accept three numbers, find greatest
+    Q-12. Accept Three Numbers, Find Greatest
 
-3. Loops (Basic)
+3️⃣ Loops & Iterations
+    Q-13. Accept an Integer and Print "Hello World" N Times
 
-    Q-13. Accept an integer and print "Hello World" n times
+    Q-14. Print Natural Numbers Up to N
 
-    Q-14. Print natural numbers up to n
+    Q-15. Reverse for Loop (Print N to 1)
 
-    Q-15. Reverse for loop (Print n to 1)
+    Q-16. Print Multiplication Table
 
-    Q-16. Print multiplication table
+    Q-17. Sum Up to N Terms
 
-    Q-17. Sum up to n terms
-
+4️⃣ Switch Case & Conditional Statements
+    
     Q-18. Switch Case & Do-While
 
-    Q-19. Repeat hello
+    Q-19. Repeat Hello
 
-    Q-20. Guess the number
+    Q-20. Guess the Number
 
     Q-21. Sasta Calculator
 
-4. Arrays (Basic)
+5️⃣ Arrays & Basic Data Structures
 
     Q-22. Introduction to Arrays
 
     Q-23. Fixed & Dynamic Size Array
 
-    Q-24. Accept value from user and assign in an array
+    Q-24. Accept Value from User and Assign in an Array
 
-Medium Level
-Ye wale questions thoda logical thinking aur problem-solving require karte hain.
-
-1. Math Problems
+🟡 Medium Level Questions
+6️⃣ Math Problems
 
     Q-25. Calculate Compound Interest
 
-    Q-26. Area of a triangle using Heron’s formula
+    Q-26. Area of a Triangle Using Heron’s Formula
 
-    Q-27. Circumference of a circle
+    Q-27. Circumference of a Circle
 
-    Q-28. Accept a year and check if it’s a Leap Year
+    Q-28. Accept a Year and Check If It’s a Leap Year
 
-    Q-29. Shop discount problem
+    Q-29. Shop Discount Problem
 
-    Q-30. Bijli Bill calculation
+    Q-30. Bijli Bill Calculation
 
-2. Loops (Intermediate)
+7️⃣ Advanced Loops & Number Theory
 
-    Q-31. Factorial of a number
+    Q-31. Factorial of a Number
 
-    Q-32. Print the sum of all even & odd numbers separately in a range
+    Q-32. Print the Sum of All Even & Odd Numbers Separately in a Range
 
-    Q-33. Print all the factors of a number
+    Q-33. Print All the Factors of a Number
 
-    Q-34. Write a program to calculate a^b (power function)
+    Q-34. Write a Program to Calculate a^b (Power Function)
 
-3. While Loop
+    Q-35. Sum of Digits
 
-    Q-35. Sum of digits
+    Q-36. Reverse of a Number
 
-    Q-36. Reverse of a number
+    Q-37. Strong Number
 
-    Q-37. Strong number
+    Q-38. Automorphic Number
 
-    Q-38. Automorphic number
-
-4. Pattern Programming (Intermediate)
+8️⃣ Pattern Printing
 
     Q-39. Right Angle Triangle
 
-    *
-    * *
-    * * *
-    * * * *
-    * * * * *
+    Q-40. Left Angle Triangle
 
-    reverce tringle
+    Q-41. Number Pattern
 
-            *
-          * *
-        * * *
-      * * * *
-    * * * * *
+    Q-42. Alphabet Pattern
 
-    Q-40. Number Pattern
+    Q-43. Inverted Right Angle Triangle
 
-    1
-    1 2
-    1 2 3
-    1 2 3 4
-    1 2 3 4 5
+    Q-44. Pyramid Patterns
 
-    Q-41. Alphabet Pattern
+    Q-45. V Pattern
 
-    A
-    A B
-    A B C
-    A B C D
-    A B C D E
+    Q-46. X Pattern
 
-    Q-42. Inverted Right Angle Triangle
+9️⃣ Arrays & Searching Algorithms
 
-    * * * * *
-    * * * *
-    * * *
-    * *
-    *
+    Q-47. Sum of Array Elements
 
-    Q-43. Pyramid Patterns
-    
-    1. payramid
+    Q-48. Maximum Element from the Array
 
-            *
-           * *
-          * * *
-         * * * *
-        * * * * *
+    Q-49. Finding Prime Numbers
 
-    2. V Pattern
+    Q-50. Checking for Automorphic Number
 
-    *         *
+    Q-51. Strong Number Validation
 
-      *     *
+🔴 Hard Level Questions
+1️⃣ Advanced Patterns & Pascal’s Triangle
 
-       *   *
+    Q-52. Print Pascal’s Triangle
 
-        * *
+    Q-53. Floyd’s Triangle
 
-         *
+    Q-54. Hollow Diamond Pattern
 
-    3. X pattern
+    Q-55. Zig-Zag Pattern
 
-    *           *
-      *       *
-          *
-      *       *
-    *            *
+    Q-56. Advanced Triangle Patterns
 
-5. Arrays (Intermediate)
+    Q-57. Cross and Hollow Patterns
 
-    Q-44. Sum of array elements
+    Q-58. Star Pyramid and Diamond Shapes
 
-    Q-45. Maximum element from the array
+2️⃣ Number Theory & Complex Calculations
 
-Hard Level
-Ye wale questions zyada logic aur nested loops ya recursion ka use karte hain.
+    Q-59. ISBN Number
 
-1. Complex Math & Conditionals
+    Q-60. HCF/GCD
 
-    Q-46. Finding prime numbers
+    Q-61. Harshad Number
 
-    Q-47. Checking for automorphic number
+    Q-62. Perfect Square
 
-    Q-48. Strong number validation
+    Q-63. Abundant Number
 
-2. Loops (Advanced)
+    Q-64. Fibonacci Series
 
-    Q-49. Print Pascal’s Triangle
+    Q-65. Find Numbers with Exactly X Divisors
 
-    Q-50. Floyd’s Triangle
+    Q-66. Prime Factors
 
-    Q-51. Hollow Diamond Pattern
+    Q-67. Calculate Area
 
-    Q-52. Zig-Zag Pattern
+    Q-68. Neon Number
 
-3. Nested Loops & Advanced Patterns
+    Q-69. Sum of Even Indexed Fibonacci Numbers
 
-    Q-53. Advanced triangle patterns
+    Q-70. Find the Largest Digit in a Number
 
-    Q-54. Cross and Hollow patterns
+    Q-71. Find LCM of Two Numbers
 
-    Q-55. Star Pyramid and Diamond Shapes
+    Q-72. Find the Sum of Even Digits in a Number
 
-4. Mini Projects
+3️⃣ Date & Condition-Based Questions
 
-    1. Restaurant Billing System
+    Q-73. Number of Days in a Month
 
-    2. Advanced Calculator
+    Q-74. Age Category Message
+
+    Q-75. Even or Odd Sum
+
+4️⃣ String & Character Manipulation
+
+    Q-76. Character Case Checker
+
+    Q-77. Largest of Three Numbers
+
+    Q-78. Positive, Negative, or Zero
+
+    Q-79. User Greeting
+
+    Q-80. Traffic Light System
+
+    Q-81. Multiplication Table
+
+    Q-82. Grade Calculator
+
+    Q-83. Simple Login System
+
+    Q-84. Swapping Without Third Variable
+
+5️⃣ Logical Puzzles & Challenges
+
+    Q-85. FizzBuzz (Multiple of Both)
+
+    Q-86. Number Reversal
+
+    Q-87. Sum of Digits
+
+    Q-88. Palindrome Checker
+
+    Q-89. Find Second Largest Number
+
+    Q-90. Find First Non-Repeating Character
+
+    Q-91. Even Digit Counter
+
+    Q-92. Nested Condition Challenge
+
+    Q-93. Toggle Case
+
+    Q-94. Find the Missing Number in a Sequence
+
+    Q-95. Convert Number to Words
