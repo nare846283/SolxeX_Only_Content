@@ -8,13 +8,13 @@ const Problems = () => {
   return (
     <div 
       className={`min-h-screen flex flex-col justify-center items-center text-center px-4 sm:px-6 md:px-12 transition-all duration-300 
-        ${darkMode ? "bg-gray-900 text-white" : "bg-gray-100 text-black"}`}
+        ${darkMode ? "bg-gray-900 text-white" : "bg-gray-300 text-black"}`}
     >
       {/* ✅ Header Section */}
-      <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-blue-500 animate-fade-in">
+      <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-orange-500 to-red-600 text-transparent bg-clip-text">
         🧠 Improve with DSA Problems
       </h1>
-      <p className="text-base sm:text-lg md:text-xl mt-3 sm:mt-4 text-gray-400 animate-slide-up">
+      <p className="text-base sm:text-lg md:text-xl mt-3 sm:mt-4 text-slate-500 animate-slide-up">
         Enhance problem-solving skills with coding challenges
       </p>
 

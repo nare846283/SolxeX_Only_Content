@@ -9,7 +9,7 @@ const Beginner = () => {
   const [selectedProject, setSelectedProject] = useState(null);
 
   return (
-    <div className={`flex w-full h-screen transition-all duration-300 ${darkMode ? "bg-gray-900 text-white" : "bg-gray-100 text-black"}`}>
+    <div className={`flex w-full h-screen transition-all duration-300 ${darkMode ? "bg-gray-900 text-white" : "bg-gray-300 text-black"}`}>
       <Sidebar data={beginnerProjects} onSelect={setSelectedProject} />
       
       <div className="flex-1 w-full flex items-start justify-center text-md font-semibold">

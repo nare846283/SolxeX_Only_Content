@@ -11,7 +11,7 @@ const ProjectSolution = ({ project }) => {
     return (
       <div
         className={`w-full h-m-screen py-24 sm:py-0 pl-[24%] flex justify-center items-center text-md font-semibold transition-all duration-300 
-        ${darkMode ? "bg-gray-900 text-white" : "bg-gray-300 text-black"}`}
+        ${darkMode ? "bg-gray-900 text-white" : "bg-gray-500 text-black"}`}
       >
         ❗ Please select a project from the sidebar
       </div>

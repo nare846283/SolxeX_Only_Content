@@ -11,7 +11,7 @@ const QuestionSolution = ({ question }) => {
     return (
       <div
         className={`w-full min-h-screen flex justify-center items-center text-sm font-semibold transition-all duration-300 
-        px-4 sm:px-6 lg:pl-[24%] py-16 ${darkMode ? "bg-gray-900 text-white" : "bg-gray-300 text-black"}`}
+        px-4 sm:px-6 lg:pl-[24%] py-16 ${darkMode ? "bg-gray-900 text-white" : "bg-gray-500 text-black"}`}
       >
         ❗ Please select a question from the sidebar
       </div>
@@ -20,7 +20,7 @@ const QuestionSolution = ({ question }) => {
 
   return (
     <div
-      className={`w-full min-h-screen transition-all duration-300 
+      className={`w-full transition-all duration-300 
         px-4 sm:px-8 md:px-16 lg:pl-[24%] py-16 ${darkMode ? "bg-gray-900 text-white" : "bg-gray-300 text-black"}`}
     >
       {/* ✅ Problem Title & Description */}

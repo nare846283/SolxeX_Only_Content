@@ -126,12 +126,12 @@ const Navbar = () => {
 
         {/* ✅ Dark Mode Toggle (Always on Right) */}
         <motion.button className="text-2xl absolute right-4" onClick={() => setDarkMode(!darkMode)}>
-          {darkMode ? <FaSun className="text-yellow-400" /> : <FaMoon className="text-gray-300" />}
+          {darkMode ? <FaSun className="text-yellow-400" /> : <FaMoon className="text-white" />}
         </motion.button>
       </nav>
 
       {/* ✅ Small Screen Navigation Links */}
-      <ul className="sm:hidden flex justify-center w-[96%] space-x-6 mt-16 ml-2 py-2 px-6 rounded-2xl absolute bottom-4"
+      <ul className="sm:hidden sm:fixed flex justify-center w-[96%] space-x-6 mt-16 ml-2 py-2 px-6 rounded-2xl fixed bottom-4"
         style={{ background: navbarBg, color: textColor }}
       >
         <motion.li whileHover={{ scale: 1.1 }} transition={{ duration: 0.5 }}>

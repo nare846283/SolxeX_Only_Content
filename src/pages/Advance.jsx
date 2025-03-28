@@ -9,7 +9,7 @@ const Advance = () => {
   const [selectedProject, setSelectedProject] = useState(null);
 
   return (
-    <div className={`flex h-screen transition-all duration-300 ${darkMode ? "bg-gray-900 text-white" : "bg-gray-100 text-black"}`}>
+    <div className={`flex h-screen transition-all duration-300 ${darkMode ? "bg-gray-900 text-white" : "bg-gray-300 text-black"}`}>
       <Sidebar data={advanceProjects} onSelect={setSelectedProject} />
       
       <div className="flex-1 flex items-start justify-center text-xl font-semibold">
