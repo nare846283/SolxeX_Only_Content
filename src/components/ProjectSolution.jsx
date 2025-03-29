@@ -10,7 +10,7 @@ const ProjectSolution = ({ project }) => {
   if (!project) {
     return (
       <div
-        className={`w-full h-m-screen py-24 sm:py-0 pl-[24%] flex justify-center items-center text-md font-semibold transition-all duration-300 
+        className={`w-full h-m-screen py-24 sm:py-0 pl-[24%] flex justify-center items-center text-2xl font-semibold transition-all duration-300 
         ${darkMode ? "bg-gray-900 text-white" : "bg-gray-500 text-black"}`}
       >
         ❗ Please select a project from the sidebar
@@ -21,7 +21,7 @@ const ProjectSolution = ({ project }) => {
   return (
     <div
       className={`w-full h-m-screen py-24 px-[10%] pl-[24%] transition-all duration-300 
-        ${darkMode ? "bg-gray-900 text-white" : "bg-gray-300 text-black"}`}
+        ${darkMode ? "bg-gray-900 text-white" : "bg-[#00ffe8] text-black"}`}
     >
       {/* ✅ Project Title & Description */}
       <h2 className="text-2xl font-bold mb-2 bg-gradient-to-r from-orange-500 to-red-600 text-transparent bg-clip-text">

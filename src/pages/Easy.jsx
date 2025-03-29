@@ -9,16 +9,18 @@ const Easy = () => {
   const [selectedQuestion, setSelectedQuestion] = useState(null);
 
   return (
-    <div className={`flex transition-all duration-300 ${darkMode ? "bg-gray-900 text-white" : "bg-gray-300 text-black"}`}>
+    <div className={`flex transition-all duration-300 ${darkMode ? "bg-gray-900 text-white" : "bg-[#00ffe8] text-black"}`}>
       <div className="min-h-screen">
         <Sidebar data={easyQuestions} onSelect={setSelectedQuestion} />
       </div>
 
-      <div className="flex-1 w-full flex items-start justify-center text-md sm:text-sm font-semibold">
+      <div className="flex-1 w-full flex items-start justify-center lg:text-4xl md:text-2xl sm:text-xl font-semibold">
         {selectedQuestion ? (
           <QuestionSolution question={selectedQuestion} />
         ) : (
-          <p className="text-gray-500 mt-72">❗ Select a question from the sidebar to view solution</p>
+          <h1 className="absolute top-1/2 left-72 px-24 text-center line-clamp-6 text-3xl sm:text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-orange-500 to-red-600 text-transparent bg-clip-text">
+          🚀 Select a question from the sidebar to view solution
+        </h1>
         )}
       </div>
     </div>

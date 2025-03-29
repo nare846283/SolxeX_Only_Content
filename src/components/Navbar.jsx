@@ -19,14 +19,14 @@ const Navbar = () => {
 
   const navbarBg = darkMode
     ? "linear-gradient(90deg, #ff007f, #ff4d4d)"
-    : "linear-gradient(90deg, #00eaff, #007bff)";
+    : "linear-gradient(90deg, #77ff00, #007bff)";
   const textColor = "white";
 
   return (
     <>
       {/* ✅ Large Screen Navbar */}
       <nav
-        className={`hidden sm:flex z-20 fixed ${isFullWidth ? "left-0 w-full" : "left-[20%] w-[80%]"} items-center justify-between px-6 py-2 transition-all duration-300`}
+        className={`hidden sm:flex z-20 fixed ${isFullWidth ? "left-0 w-full" : "left-[20%] w-[80%]"} items-center px-6 py-2 transition-all duration-300`}
         style={{ color: textColor }}
       >
         {/* ✅ Logo (Always Left) */}
@@ -44,14 +44,14 @@ const Navbar = () => {
         </div>
 
         {/* ✅ Navigation Links */}
-        <ul className="flex space-x-6 text-lg py-2 px-6 rounded-2xl" style={{ background: navbarBg, color: textColor }}>
+        <ul className="flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 space-x-4 text-lg py-2 px-6 rounded-2xl" style={{ background: navbarBg, color: textColor }}>
           <motion.li whileHover={{ scale: 1.1 }} transition={{ duration: 0.5 }}>
-            <NavLink to="/" className="text-white">Home</NavLink>
+            <NavLink to="/">Home</NavLink>
           </motion.li>
 
           {/* ✅ Projects Dropdown */}
           <motion.li className="relative group" whileHover={{ scale: 1.1 }} transition={{ duration: 0.5 }}>
-            <NavLink to="/projects" className="text-white">Projects</NavLink>
+            <NavLink to="/projects">Projects</NavLink>
             <motion.ul
               className="absolute left-0 mt-2 w-40 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-100"
               style={{ background: navbarBg }}
@@ -72,10 +72,10 @@ const Navbar = () => {
 
           {/* ✅ Problems Dropdown */}
           <motion.li className="relative group" whileHover={{ scale: 1.1 }} transition={{ duration: 0.5 }}>
-            <NavLink to="/problems" className="text-white">Problems</NavLink>
+            <NavLink to="/problems">Problems</NavLink>
             <motion.ul
               className="absolute left-0 mt-2 w-40 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-100"
-              style={{ background: navbarBg }}
+              style={{ background: navbarBg, color: textColor }}
             >
               {["Easy", "Medium", "Hard"].map((level, index) => (
                 <motion.li
@@ -93,15 +93,8 @@ const Navbar = () => {
         </ul>
 
         {/* ✅ Dark Mode Toggle (Always on Right) */}
-        <motion.button
-          className="px-4 py-2 rounded-md transition-all duration-300"
-          style={{ background: navbarBg, color: textColor }}
-          onClick={() => setDarkMode(!darkMode)}
-          whileTap={{ scale: 0.9 }}
-          animate={{ opacity: [0.6, 1] }}
-          transition={{ duration: 0.1 }}
-        >
-          {darkMode ? "Light" : "Dark"}
+        <motion.button className="text-2xl absolute right-4" onClick={() => setDarkMode(!darkMode)}>
+          {darkMode ? <FaSun className="text-yellow-400" /> : <FaMoon className="text-white" />}
         </motion.button>
       </nav>
 
@@ -131,11 +124,11 @@ const Navbar = () => {
       </nav>
 
       {/* ✅ Small Screen Navigation Links */}
-      <ul className="sm:hidden sm:fixed flex justify-center w-[96%] space-x-6 mt-16 ml-2 py-2 px-6 rounded-2xl fixed bottom-4"
+      <ul className="sm:hidden sm:fixed flex justify-center space-x-6 mt-16 ml-2 py-2 px-6 rounded-2xl absolute bottom-4 left-1/2 -translate-x-1/2 "
         style={{ background: navbarBg, color: textColor }}
       >
         <motion.li whileHover={{ scale: 1.1 }} transition={{ duration: 0.5 }}>
-          <NavLink to="/" className="text-white">Home</NavLink>
+          <NavLink to="/" >Home</NavLink>
         </motion.li>
 
         {/* ✅ Projects & Problems Dropdowns */}
