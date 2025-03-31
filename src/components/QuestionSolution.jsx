@@ -20,7 +20,7 @@ const QuestionSolution = ({ question }) => {
 
   return (
     <div
-      className={`w-full transition-all duration-300 lg:text-md md:text-md
+      className={`w-full transition-all duration-300 lg:text-[1rem] md:text-[1rem] sm:text-[0.8rem] font-semibold
         px-4 sm:px-8 md:px-16 lg:pl-[24%] py-24 ${darkMode ? "bg-gray-900 text-white" : "bg-[#00ffe8] text-black"}`}
     >
       {/* ✅ Problem Title & Description */}

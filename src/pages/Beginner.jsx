@@ -12,7 +12,7 @@ const Beginner = () => {
     <div className={`flex w-full h-screen transition-all duration-300 ${darkMode ? "bg-gray-900 text-white" : "bg-[#00ffe8] text-black"}`}>
       <Sidebar data={beginnerProjects} onSelect={setSelectedProject} />
       
-      <div className="flex-1 w-full flex items-start justify-center text-md font-semibold">
+      <div className="flex-1 w-full flex items-start justify-center">
         {selectedProject ? (
           <ProjectSolution project={selectedProject} />
         ) : (

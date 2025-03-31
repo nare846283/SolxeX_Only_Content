@@ -14,7 +14,7 @@ const Easy = () => {
         <Sidebar data={easyQuestions} onSelect={setSelectedQuestion} />
       </div>
 
-      <div className="flex-1 w-full flex items-start justify-center lg:text-4xl md:text-2xl sm:text-xl font-semibold">
+      <div className="flex-1 w-full flex items-start justify-center ">
         {selectedQuestion ? (
           <QuestionSolution question={selectedQuestion} />
         ) : (

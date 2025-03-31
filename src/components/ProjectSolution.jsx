@@ -10,7 +10,7 @@ const ProjectSolution = ({ project }) => {
   if (!project) {
     return (
       <div
-        className={`w-full h-m-screen py-24 sm:py-0 pl-[24%] flex justify-center items-center text-2xl font-semibold transition-all duration-300 
+        className={`w-full h-m-screen py-24 sm:py-0 pl-[24%] flex justify-center items-center transition-all duration-300 lg:text-[1rem] md:text-[1rem] sm:text-[0.8rem] font-semibold
         ${darkMode ? "bg-gray-900 text-white" : "bg-gray-500 text-black"}`}
       >
         ❗ Please select a project from the sidebar
@@ -20,7 +20,7 @@ const ProjectSolution = ({ project }) => {
 
   return (
     <div
-      className={`w-full h-m-screen py-24 px-[10%] pl-[24%] transition-all duration-300 
+      className={`w-full h-m-screen py-24 px-[10%] pl-[24%] transition-all duration-300 lg:text-[1rem] md:text-[1rem] sm:text-[0.8rem] font-semibold
         ${darkMode ? "bg-gray-900 text-white" : "bg-[#00ffe8] text-black"}`}
     >
       {/* ✅ Project Title & Description */}

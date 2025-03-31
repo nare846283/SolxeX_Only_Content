@@ -12,7 +12,7 @@ const Medium = () => {
     <div className={`flex h-screen transition-all duration-300 ${darkMode ? "bg-gray-900 text-white" : "bg-[#00ffe8] text-black"}`}>
       <Sidebar data={mediumQuestions} onSelect={setSelectedQuestion} />
       
-      <div className="flex-1 flex items-start justify-center text-md font-semibold">
+      <div className="flex-1 flex items-start justify-center">
         {selectedQuestion ? (
           <QuestionSolution question={selectedQuestion} />
         ) : (
