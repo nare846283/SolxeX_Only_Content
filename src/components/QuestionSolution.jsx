@@ -10,8 +10,8 @@ const QuestionSolution = ({ question }) => {
   if (!question) {
     return (
       <div
-        className={`w-full min-h-screen flex justify-center items-center text-2xl font-semibold transition-all duration-300 
-        px-4 sm:px-6 lg:pl-[24%] py-16 ${darkMode ? "bg-gray-900 text-white" : "bg-[#00ffe8] text-black"}`}
+        className={` sm:max-w-[100vw] min-h-screen flex justify-center items-center text-2xl font-semibold transition-all duration-300 
+        px-4 sm:px-6 sm:pl-0 lg:pl-[24%] py-16 ${darkMode ? "bg-gray-900 text-white" : "bg-[#00ffe8] text-black"}`}
       >
         ❗ Please select a question from the sidebar
       </div>
@@ -131,11 +131,11 @@ const QuestionSolution = ({ question }) => {
 
       {/* ✅ Comparison Table */}
       {question.comparisonTable && (
-        <div className="mt-6 w-full overflow-x-auto">
+        <div className="mt-6 w-full overflow-x-hidden">
           <h3 className={`text-lg md:text-xl font-semibold ${darkMode ? "text-pink-400" : "text-purple-600"}`}>
             📊 Comparison Table:
           </h3>
-          <div className="overflow-x-auto">
+          <div className="overflow-x-hidden">
             <table
               className={`w-full border-collapse mt-3 text-sm md:text-base transition-all duration-300 
               ${darkMode ? "border-gray-700 text-white" : "border-gray-300 text-black"}`}

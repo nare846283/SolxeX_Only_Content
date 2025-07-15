@@ -6,8 +6,8 @@ const Problems = () => {
   const { darkMode } = useContext(ThemeContext);
 
   return (
-    <div 
-      className={`min-h-screen flex flex-col justify-center items-center text-center px-4 sm:px-6 md:px-12 transition-all duration-300 
+    <div
+      className={`min-h-screen flex flex-col justify-center items-center text-center px-4 py-16 sm:px-6 md:px-12 transition-all duration-300 
         ${darkMode ? "bg-gray-900 text-white" : "bg-[#00ffe8] text-black"}`}
     >
       {/* ✅ Header Section */}
@@ -20,7 +20,7 @@ const Problems = () => {
 
       {/* ✅ Navigation Buttons (100% Responsive Grid) */}
       <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full max-w-lg sm:max-w-xl md:max-w-3xl lg:max-w-4xl">
-        
+
         <Link to="/easy" className="group">
           <div className="p-5 sm:p-6 bg-green-500 text-white font-semibold rounded-lg shadow-lg transition-transform transform group-hover:scale-105">
             🟢 Easy Problems
@@ -42,7 +42,7 @@ const Problems = () => {
       </div>
 
       {/* ✅ Footer */}
-      <p className="mt-8 sm:mt-10 text-gray-500 text-sm sm:text-base">
+      <p className="text-sm sm:text-base md:text-lg text-gray-500 animate-bounce my-10">
         🚀 Solve problems & level up your coding skills!
       </p>
 

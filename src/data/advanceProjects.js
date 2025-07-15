@@ -8,6 +8,12 @@ export const advanceProjects = [
           title: "Weather App 🌦️",
           concepts: "'API Fetching', 'Async/Await', 'Dynamic UI'",
           description: "Ek real-time weather app jo OpenWeather API se data fetch karega aur user ke location ke hisaab se temperature show karega.",
+          banner: {
+            imageUrl: "https://plus.unsplash.com/premium_photo-1741996431660-3736cb7e238b?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            sourceCode: "https://github.com/solxex/JavaScript-Projects/tree/main/color-changer",
+            demoLink: "https://solxex-color-changer.netlify.app/",
+            techStack: ["HTML", "CSS", "JavaScript"]
+          },
           features: [
             "✅ Real-time weather data API se fetch hota hai.",
             "✅ User ki location ke hisaab se temperature aur conditions show karta hai.",

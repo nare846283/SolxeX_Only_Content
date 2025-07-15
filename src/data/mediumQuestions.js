@@ -2418,17 +2418,1209 @@ Number Pattern:
         ]
       },
       // Q-17. Number Pattern
+      {
+        "title": "Number Pattern",
+        "description": "Different types ke number patterns print karne ke multiple approaches explore karenge.",
+        "problemStatement": "Ek function likho jo n rows ke liye different types ke number patterns print kare. Various number patterns jaise sequential, row number, multiplication table pattern implement karo.",
+        "algorithm": [
+          "🔹 User se number of rows (n) input lo",
+          "🔹 Different pattern types ke liye separate functions banao",
+          "🔹 Nested loops ka use karke pattern print karo",
+          "🔹 Pattern format ke hisab se numbers arrange karo"
+        ],
+        "solution": {
+          "methods": [
+            {
+              "method": "Method 1: Sequential Number Pattern",
+              "approach": ["🔹 1 se start karke sequential numbers print karenge"],
+              "code": `
+function printSequentialPattern(n) {
+    let num = 1;
+    for(let i = 1; i <= n; i++) {
+        let row = '';
+        for(let j = 1; j <= i; j++) {
+            row += num + ' ';
+            num++;
+        }
+        console.log(row);
+    }
+}
 
+// Example Usage
+const rows = parseInt(prompt("Enter number of rows:"));
+printSequentialPattern(rows);`,
+              "explanation": [
+                "🔹 Single variable use karke sequential numbers print karte hain",
+                "🔹 Har iteration me number increment hota hai",
+                "🔹 Right aligned format maintain karte hain"
+              ]
+            },
+            {
+              "method": "Method 2: Row Number Pattern",
+              "approach": ["🔹 Har row me row number repeat karenge"],
+              "code": `
+function printRowNumberPattern(n) {
+    for(let i = 1; i <= n; i++) {
+        let row = '';
+        for(let j = 1; j <= i; j++) {
+            row += i + ' ';
+        }
+        console.log(row);
+    }
+}
+
+// Example Usage
+const rows = parseInt(prompt("Enter number of rows:"));
+printRowNumberPattern(rows);`,
+              "explanation": [
+                "🔹 Current row number (i) ko repeat karte hain",
+                "🔹 Row length row number ke equal hoti hai",
+                "🔹 Simple and symmetric pattern banta hai"
+              ]
+            },
+            {
+              "method": "Method 3: Pascal Triangle Pattern",
+              "approach": ["🔹 Pascal triangle ka number pattern banayenge"],
+              "code": `
+function printPascalPattern(n) {
+    for(let i = 0; i < n; i++) {
+        let number = 1;
+        let row = '';
+        
+        // Add spaces for alignment
+        row += ' '.repeat(n - i);
+        
+        for(let j = 0; j <= i; j++) {
+            row += number + ' ';
+            number = number * (i - j) / (j + 1);
+        }
+        console.log(row);
+    }
+}
+
+// Example Usage
+const rows = parseInt(prompt("Enter number of rows:"));
+printPascalPattern(rows);`,
+              "explanation": [
+                "🔹 Binomial coefficient formula use karte hain",
+                "🔹 Spaces add karke center alignment maintain karte hain",
+                "🔹 Complex but mathematical pattern generate hota hai"
+              ]
+            },
+            {
+              "method": "Method 4: Multiplication Table Pattern",
+              "approach": ["🔹 Row number ka multiplication table print karenge"],
+              "code": `
+function printMultiplicationPattern(n) {
+    for(let i = 1; i <= n; i++) {
+        let row = '';
+        for(let j = 1; j <= i; j++) {
+            row += (i * j) + ' ';
+        }
+        console.log(row);
+    }
+}
+
+// Example Usage
+const rows = parseInt(prompt("Enter number of rows:"));
+printMultiplicationPattern(rows);`,
+              "explanation": [
+                "🔹 Row number aur column number ka product print karte hain",
+                "🔹 Multiplication table pattern generate hota hai",
+                "🔹 Educational pattern for learning tables"
+              ]
+            }
+          ],
+          "output": `
+Example Outputs:
+
+Sequential Pattern (n=4):
+1
+2 3
+4 5 6
+7 8 9 10
+
+Row Number Pattern (n=4):
+1
+2 2
+3 3 3
+4 4 4 4
+
+Pascal Pattern (n=4):
+   1
+  1 1
+ 1 2 1
+1 3 3 1
+
+Multiplication Pattern (n=4):
+1
+2 4
+3 6 9
+4 8 12 16`
+        },
+        "practiceProblems": [
+          "🔹 Fibonacci sequence pattern implement karo",
+          "🔹 Alternate odd-even number pattern banao",
+          "🔹 Prime number pattern generate karo",
+          "🔹 Number pattern ko reverse order me print karo"
+        ],
+        "interviewQuestions": [
+          "🔹 Different number patterns ki time complexity analyze karo",
+          "🔹 Pattern printing me space optimization kaise kar sakte hain?",
+          "🔹 Large numbers ke patterns me precision kaise maintain karein?",
+          "🔹 Pattern alignment ke liye best practices kya hain?"
+        ],
+        "comparisonTable": [
+          {
+            "approach": "Sequential Pattern",
+            "timeComplexity": "O(n²)",
+            "spaceComplexity": "O(1)",
+            "pros": "Simple to implement, natural sequence",
+            "cons": "Limited to sequential numbers only"
+          },
+          {
+            "approach": "Row Number Pattern",
+            "timeComplexity": "O(n²)",
+            "spaceComplexity": "O(1)",
+            "pros": "Easy to understand, symmetric",
+            "cons": "Repetitive numbers in each row"
+          },
+          {
+            "approach": "Pascal Pattern",
+            "timeComplexity": "O(n²)",
+            "spaceComplexity": "O(1)",
+            "pros": "Mathematical significance",
+            "cons": "Complex calculation for each number"
+          },
+          {
+            "approach": "Multiplication Pattern",
+            "timeComplexity": "O(n²)",
+            "spaceComplexity": "O(1)",
+            "pros": "Educational value, useful pattern",
+            "cons": "Numbers can become large quickly"
+          }
+        ],
+        "conclusion": [
+          "🔹 Different patterns serve different purposes",
+          "🔹 Choose pattern based on requirement",
+          "🔹 Consider number size and formatting",
+          "🔹 Optimize space and time complexity where possible"
+        ]
+      },
       // Q-18. Alphabet Pattern
+      {
+        "title": "Alphabet Pattern",
+        "description": "Different types ke alphabet patterns print karne ke multiple approaches explore karenge.",
+        "problemStatement": "Ek function likho jo n rows ke liye different types ke alphabet patterns print kare. Various patterns jaise sequential alphabets, repeated alphabets, aur diagonal patterns implement karo.",
+        "algorithm": [
+          "🔹 User se number of rows (n) input lo",
+          "🔹 Different alphabet patterns ke liye separate functions banao",
+          "🔹 ASCII values ya direct alphabets ka use karo",
+          "🔹 Pattern format ke hisab se alphabets arrange karo"
+        ],
+        "solution": {
+          "methods": [
+            {
+              "method": "Method 1: Sequential Alphabet Pattern",
+              "approach": ["🔹 A se start karke sequential alphabets print karenge"],
+              "code": `
+function printAlphabetPattern(n) {
+    for(let i = 0; i < n; i++) {
+        let row = '';
+        for(let j = 0; j <= i; j++) {
+            // Convert ASCII to alphabet (65 is ASCII for 'A')
+            row += String.fromCharCode(65 + j) + ' ';
+        }
+        console.log(row);
+    }
+}
 
+// Example Usage
+const rows = parseInt(prompt("Enter number of rows:"));
+printAlphabetPattern(rows);`,
+              "explanation": [
+                "🔹 ASCII value 65 se start karke alphabets generate karte hain",
+                "🔹 String.fromCharCode() se ASCII ko alphabet me convert karte hain",
+                "🔹 Har row me increasing alphabets print hote hain"
+              ]
+            },
+            {
+              "method": "Method 2: Row-wise Alphabet Pattern",
+              "approach": ["🔹 Har row me same alphabet repeat karenge"],
+              "code": `
+function printRowAlphabetPattern(n) {
+    for(let i = 0; i < n; i++) {
+        let row = '';
+        // Current row's alphabet
+        const currentChar = String.fromCharCode(65 + i);
+        
+        for(let j = 0; j <= i; j++) {
+            row += currentChar + ' ';
+        }
+        console.log(row);
+    }
+}
+
+// Example Usage
+const rows = parseInt(prompt("Enter number of rows:"));
+printRowAlphabetPattern(rows);`,
+              "explanation": [
+                "🔹 Har row ke liye ek fixed alphabet use karte hain",
+                "🔹 Row number ke according alphabet select hota hai",
+                "🔹 Simple and symmetric pattern banta hai"
+              ]
+            },
+            {
+              "method": "Method 3: Reverse Alphabet Pattern",
+              "approach": ["🔹 Z se start karke reverse order me alphabets print karenge"],
+              "code": `
+function printReverseAlphabetPattern(n) {
+    for(let i = 0; i < n; i++) {
+        let row = '';
+        for(let j = 0; j <= i; j++) {
+            // Start from 'Z' (ASCII 90) and go backwards
+            row += String.fromCharCode(90 - j) + ' ';
+        }
+        console.log(row);
+    }
+}
+
+// Example Usage
+const rows = parseInt(prompt("Enter number of rows:"));
+printReverseAlphabetPattern(rows);`,
+              "explanation": [
+                "🔹 ASCII value 90 ('Z') se start karke reverse order me print karte hain",
+                "🔹 Decreasing order me alphabets arrange hote hain",
+                "🔹 Different variation of alphabet pattern"
+              ]
+            },
+            {
+              "method": "Method 4: Diagonal Alphabet Pattern",
+              "approach": ["🔹 Diagonal format me alphabets print karenge"],
+              "code": `
+function printDiagonalAlphabetPattern(n) {
+    for(let i = 0; i < n; i++) {
+        let row = '';
+        // Add spaces for alignment
+        row += ' '.repeat(n - i - 1);
+        
+        // Print alphabet
+        row += String.fromCharCode(65 + i);
+        
+        console.log(row);
+    }
+}
+
+// Example Usage
+const rows = parseInt(prompt("Enter number of rows:"));
+printDiagonalAlphabetPattern(rows);`,
+              "explanation": [
+                "🔹 Spaces add karke diagonal alignment create karte hain",
+                "🔹 Single alphabet per row print hota hai",
+                "🔹 Clean and minimal pattern"
+              ]
+            }
+          ],
+          "output": `
+Example Outputs:
+
+Sequential Pattern (n=5):
+A
+A B
+A B C
+A B C D
+A B C D E
+
+Row Pattern (n=5):
+A
+B B
+C C C
+D D D D
+E E E E E
+
+Reverse Pattern (n=5):
+Z
+Z Y
+Z Y X
+Z Y X W
+Z Y X W V
+
+Diagonal Pattern (n=5):
+    A
+   B
+  C
+ D
+E`
+        },
+        "practiceProblems": [
+          "🔹 Vowels only pattern implement karo",
+          "🔹 Alternate case pattern banao (aAbB...)",
+          "🔹 Diamond shape me alphabet pattern banao",
+          "🔹 Spiral format me alphabets print karo"
+        ],
+        "interviewQuestions": [
+          "🔹 ASCII values vs direct character usage - pros and cons",
+          "🔹 Pattern spacing and alignment ke best practices",
+          "🔹 Memory optimization for large patterns",
+          "🔹 Unicode characters ke sath pattern kaise handle karenge?"
+        ],
+        "comparisonTable": [
+          {
+            "approach": "Sequential Pattern",
+            "timeComplexity": "O(n²)",
+            "spaceComplexity": "O(1)",
+            "pros": "Easy to understand, natural progression",
+            "cons": "Limited to 26 letters"
+          },
+          {
+            "approach": "Row Pattern",
+            "timeComplexity": "O(n²)",
+            "spaceComplexity": "O(1)",
+            "pros": "Simple and symmetric",
+            "cons": "Repetitive characters"
+          },
+          {
+            "approach": "Reverse Pattern",
+            "timeComplexity": "O(n²)",
+            "spaceComplexity": "O(1)",
+            "pros": "Unique variation",
+            "cons": "Might be confusing to read"
+          },
+          {
+            "approach": "Diagonal Pattern",
+            "timeComplexity": "O(n)",
+            "spaceComplexity": "O(1)",
+            "pros": "Clean and minimal",
+            "cons": "Limited character display"
+          }
+        ],
+        "conclusion": [
+          "🔹 ASCII values provide systematic way to generate alphabets",
+          "🔹 Consider pattern readability and aesthetics",
+          "🔹 Handle alphabet wrap-around cases (after Z)",
+          "🔹 Optimize space usage in pattern printing"
+        ]
+      },
       // Q-19. Inverted Right Angle Triangle
+      {
+        "title": "Inverted Right Angle Triangle Pattern",
+        "description": "Inverted right angle triangle pattern print karne ke multiple approaches explore karenge.",
+        "problemStatement": "Ek function likho jo n rows ke liye inverted right angle triangle pattern print kare. Pattern me stars (*) ya numbers ya alphabets use kar sakte hain.",
+        "algorithm": [
+          "🔹 User se number of rows (n) input lo",
+          "🔹 Outer loop n se 1 tak decreasing order me chalega",
+          "🔹 Inner loop current row number tak chalega",
+          "🔹 Different patterns ke liye characters print karo"
+        ],
+        "solution": {
+          "methods": [
+            {
+              "method": "Method 1: Using Stars Pattern",
+              "approach": ["🔹 Stars (*) ka use karke inverted triangle banayenge"],
+              "code": `
+function printInvertedStarPattern(n) {
+    for(let i = n; i >= 1; i--) {
+        let row = '';
+        for(let j = 1; j <= i; j++) {
+            row += '* ';
+        }
+        console.log(row);
+    }
+}
 
+// Example Usage
+const rows = parseInt(prompt("Enter number of rows:"));
+printInvertedStarPattern(rows);`,
+              "explanation": [
+                "🔹 Outer loop n se 1 tak decrement hota hai",
+                "🔹 Inner loop current row (i) times stars print karta hai",
+                "🔹 Har row me stars ki count decrease hoti hai"
+              ]
+            },
+            {
+              "method": "Method 2: Using Numbers Pattern",
+              "approach": ["🔹 Numbers ka use karke inverted pattern banayenge"],
+              "code": `
+function printInvertedNumberPattern(n) {
+    for(let i = n; i >= 1; i--) {
+        let row = '';
+        for(let j = 1; j <= i; j++) {
+            row += j + ' ';  // Can also use i to print row number
+        }
+        console.log(row);
+    }
+}
+
+// Example Usage
+const rows = parseInt(prompt("Enter number of rows:"));
+printInvertedNumberPattern(rows);`,
+              "explanation": [
+                "🔹 Numbers 1 se i tak print hote hain har row me",
+                "🔹 Row length gradually decrease hoti hai",
+                "🔹 Can use row number (i) instead of column number (j)"
+              ]
+            },
+            {
+              "method": "Method 3: Using String Repeat",
+              "approach": ["🔹 String repeat method ka use karke pattern banayenge"],
+              "code": `
+function printInvertedPatternUsingRepeat(n) {
+    for(let i = n; i >= 1; i--) {
+        console.log('* '.repeat(i));
+    }
+}
+
+// Example Usage
+const rows = parseInt(prompt("Enter number of rows:"));
+printInvertedPatternUsingRepeat(rows);`,
+              "explanation": [
+                "🔹 String.repeat() method se pattern generate hota hai",
+                "🔹 Most concise implementation",
+                "🔹 Easy to modify pattern character"
+              ]
+            },
+            {
+              "method": "Method 4: Using Array Methods",
+              "approach": ["🔹 Modern array methods ka use karenge"],
+              "code": `
+function printInvertedPatternUsingArray(n) {
+    Array.from({ length: n }, (_, i) => {
+        const stars = Array(n - i).fill('*').join(' ');
+        console.log(stars);
+    });
+}
+
+// Example Usage
+const rows = parseInt(prompt("Enter number of rows:"));
+printInvertedPatternUsingArray(rows);`,
+              "explanation": [
+                "🔹 Array.from() se iterations handle karte hain",
+                "🔹 fill() and join() se pattern generate karte hain",
+                "🔹 Functional programming approach"
+              ]
+            }
+          ],
+          "output": `
+Example Output (n=5):
+* * * * *
+* * * *
+* * *
+* *
+*
+
+Number Pattern (n=5):
+1 2 3 4 5
+1 2 3 4
+1 2 3
+1 2
+1`
+        },
+        "practiceProblems": [
+          "🔹 Alphabet pattern banao (A B C D...)",
+          "🔹 Row number based inverted pattern banao",
+          "🔹 Custom characters se pattern banao",
+          "🔹 Right-aligned inverted pattern implement karo"
+        ],
+        "interviewQuestions": [
+          "🔹 Different approaches ki space complexity compare karo",
+          "🔹 Large input ke liye konsa approach best rahega?",
+          "🔹 Pattern printing me memory optimization ke techniques kya hain?",
+          "🔹 Inverted vs normal triangle pattern me kya differences hain?"
+        ],
+        "comparisonTable": [
+          {
+            "approach": "Using Nested Loops",
+            "timeComplexity": "O(n²)",
+            "spaceComplexity": "O(n)",
+            "pros": "Simple to understand and implement",
+            "cons": "More lines of code"
+          },
+          {
+            "approach": "String Repeat",
+            "timeComplexity": "O(n²)",
+            "spaceComplexity": "O(n)",
+            "pros": "Most concise solution",
+            "cons": "Limited pattern flexibility"
+          },
+          {
+            "approach": "Array Methods",
+            "timeComplexity": "O(n²)",
+            "spaceComplexity": "O(n)",
+            "pros": "Modern and functional approach",
+            "cons": "May be slower for large inputs"
+          }
+        ],
+        "conclusion": [
+          "🔹 String repeat approach is most concise",
+          "🔹 Nested loops provide more control over pattern",
+          "🔹 Consider input size when choosing approach",
+          "🔹 Pattern flexibility vs code simplicity tradeoff"
+        ]
+      },
       // Q-20. Pyramid Patterns
+      {
+        "title": "Pyramid Patterns",
+        "description": "Different types ke pyramid patterns print karne ke multiple approaches explore karenge.",
+        "problemStatement": "Ek function likho jo n rows ke liye pyramid pattern print kare. Pattern me spaces aur characters (stars/numbers/alphabets) ka symmetrical arrangement hona chahiye.",
+        "algorithm": [
+          "🔹 User se number of rows (n) input lo",
+          "🔹 Outer loop rows ke liye (1 to n)",
+          "🔹 Leading spaces print karo (n-i) times",
+          "🔹 Characters print karo (2*i-1) times",
+          "🔹 Different patterns ke liye characters vary karo"
+        ],
+        "solution": {
+          "methods": [
+            {
+              "method": "Method 1: Star Pyramid Pattern",
+              "approach": ["🔹 Stars (*) ka use karke basic pyramid pattern banayenge"],
+              "code": `
+function printStarPyramid(n) {
+    for(let i = 1; i <= n; i++) {
+        // Print leading spaces
+        let spaces = ' '.repeat(n - i);
+        // Print stars
+        let stars = '*'.repeat(2 * i - 1);
+        console.log(spaces + stars);
+    }
+}
 
+// Example Usage
+const rows = parseInt(prompt("Enter number of rows:"));
+printStarPyramid(rows);`,
+              "explanation": [
+                "🔹 Leading spaces se pattern center align hota hai",
+                "🔹 Stars ki count odd numbers (1, 3, 5...) ke pattern me badhti hai",
+                "🔹 Har row me symmetrical pattern banta hai"
+              ]
+            },
+            {
+              "method": "Method 2: Number Pyramid Pattern",
+              "approach": ["🔹 Numbers ka use karke pyramid pattern banayenge"],
+              "code": `
+function printNumberPyramid(n) {
+    for(let i = 1; i <= n; i++) {
+        let pattern = '';
+        
+        // Print leading spaces
+        pattern += ' '.repeat(n - i);
+        
+        // Print increasing numbers
+        for(let j = 1; j <= i; j++) {
+            pattern += j + ' ';
+        }
+        
+        // Print decreasing numbers
+        for(let j = i - 1; j >= 1; j--) {
+            pattern += j + ' ';
+        }
+        
+        console.log(pattern);
+    }
+}
+
+// Example Usage
+const rows = parseInt(prompt("Enter number of rows:"));
+printNumberPyramid(rows);`,
+              "explanation": [
+                "🔹 Numbers increasing order me left side print hote hain",
+                "🔹 Numbers decreasing order me right side print hote hain",
+                "🔹 Pattern palindrome jaisa dikhta hai"
+              ]
+            },
+            {
+              "method": "Method 3: Character Pyramid Pattern",
+              "approach": ["🔹 Alphabets ka use karke pyramid pattern banayenge"],
+              "code": `
+function printCharacterPyramid(n) {
+    for(let i = 0; i < n; i++) {
+        let pattern = '';
+        
+        // Print leading spaces
+        pattern += ' '.repeat(n - i - 1);
+        
+        // Print characters
+        for(let j = 0; j <= i; j++) {
+            pattern += String.fromCharCode(65 + j) + ' ';
+        }
+        
+        // Print reverse characters
+        for(let j = i - 1; j >= 0; j--) {
+            pattern += String.fromCharCode(65 + j) + ' ';
+        }
+        
+        console.log(pattern);
+    }
+}
+
+// Example Usage
+const rows = parseInt(prompt("Enter number of rows:"));
+printCharacterPyramid(rows);`,
+              "explanation": [
+                "🔹 ASCII values se alphabets generate karte hain",
+                "🔹 Left side A se increasing order me alphabets print hote hain",
+                "🔹 Right side decreasing order me alphabets print hote hain"
+              ]
+            },
+            {
+              "method": "Method 4: Special Pattern Pyramid",
+              "approach": ["🔹 Special characters ya mixed pattern use karenge"],
+              "code": `
+function printSpecialPyramid(n) {
+    for(let i = 1; i <= n; i++) {
+        let pattern = '';
+        
+        // Print leading spaces
+        pattern += ' '.repeat(n - i);
+        
+        // Print special pattern
+        for(let j = 1; j <= 2 * i - 1; j++) {
+            if(j === 1 || j === 2 * i - 1 || i === n) {
+                pattern += '*';
+            } else {
+                pattern += ' ';
+            }
+        }
+        
+        console.log(pattern);
+    }
+}
+
+// Example Usage
+const rows = parseInt(prompt("Enter number of rows:"));
+printSpecialPyramid(rows);`,
+              "explanation": [
+                "🔹 Hollow pyramid pattern generate karta hai",
+                "🔹 Border pe stars aur beech me spaces print hote hain",
+                "🔹 Last row me solid line print hoti hai"
+              ]
+            }
+          ],
+          "output": `
+Example Outputs:
+
+Star Pyramid (n=5):
+    *
+   ***
+  *****
+ *******
+*********
+
+Number Pyramid (n=4):
+   1
+  1 2 1
+ 1 2 3 2 1
+1 2 3 4 3 2 1
+
+Character Pyramid (n=4):
+   A
+  A B A
+ A B C B A
+A B C D C B A
+
+Special Pyramid (n=5):
+    *
+   * *
+  *   *
+ *     *
+*********`
+        },
+        "practiceProblems": [
+          "🔹 Diamond pattern implement karo",
+          "🔹 Hollow diamond pattern banao",
+          "🔹 Number diamond with alternating patterns banao",
+          "🔹 Double pyramid pattern implement karo"
+        ],
+        "interviewQuestions": [
+          "🔹 Pyramid patterns me space complexity kaise optimize karenge?",
+          "🔹 Different patterns ki time complexity analyze karo",
+          "🔹 Large input handling ke liye kya approach best rahega?",
+          "🔹 Pattern symmetry maintain karne ke liye kya points dhyan me rakhne chahiye?"
+        ],
+        "comparisonTable": [
+          {
+            "approach": "Star Pattern",
+            "timeComplexity": "O(n²)",
+            "spaceComplexity": "O(n)",
+            "pros": "Simple and classic pattern",
+            "cons": "Limited to single character"
+          },
+          {
+            "approach": "Number Pattern",
+            "timeComplexity": "O(n²)",
+            "spaceComplexity": "O(n)",
+            "pros": "More complex and interesting",
+            "cons": "Numbers can become large and misaligned"
+          },
+          {
+            "approach": "Character Pattern",
+            "timeComplexity": "O(n²)",
+            "spaceComplexity": "O(n)",
+            "pros": "Alphabetical sequence looks good",
+            "cons": "Limited to 26 characters"
+          },
+          {
+            "approach": "Special Pattern",
+            "timeComplexity": "O(n²)",
+            "spaceComplexity": "O(n)",
+            "pros": "Flexible and customizable",
+            "cons": "More complex logic needed"
+          }
+        ],
+        "conclusion": [
+          "🔹 Choose pattern type based on requirement",
+          "🔹 Space management is crucial for alignment",
+          "🔹 Consider readability and aesthetics",
+          "🔹 Optimize for larger inputs if needed"
+        ]
+      },
       // Q-21. V Pattern
+      {
+        "title": "V Pattern",
+        "description": "V shape pattern print karne ke multiple approaches explore karenge.",
+        "problemStatement": "Ek function likho jo n rows ke liye V pattern print kare. Pattern me spaces aur characters ka arrangement V shape me hona chahiye.",
+        "algorithm": [
+          "🔹 User se number of rows (n) input lo",
+          "🔹 Outer loop rows ke liye (1 to n)",
+          "🔹 Left side spaces aur character print karo",
+          "🔹 Middle spaces print karo (2*row-3)",
+          "🔹 Right side character print karo"
+        ],
+        "solution": {
+          "methods": [
+            {
+              "method": "Method 1: Using Stars Pattern",
+              "approach": ["🔹 Stars (*) aur spaces ka use karke V shape banayenge"],
+              "code": `
+function printVPattern(n) {
+    for(let i = 1; i <= n; i++) {
+        let pattern = '';
+        
+        // Print left spaces and star
+        pattern += ' '.repeat(i - 1) + '*';
+        
+        // Print middle spaces and right star (except for last row)
+        if(i !== n) {
+            pattern += ' '.repeat(2 * (n - i) - 1) + '*';
+        }
+        
+        console.log(pattern);
+    }
+}
 
+// Example Usage
+const rows = parseInt(prompt("Enter number of rows:"));
+printVPattern(rows);`,
+              "explanation": [
+                "🔹 Left side me increasing spaces print hote hain",
+                "🔹 Middle me decreasing spaces print hote hain",
+                "🔹 Right side star last row ko chhod kar print hota hai"
+              ]
+            },
+            {
+              "method": "Method 2: Using Numbers Pattern",
+              "approach": ["🔹 Numbers ka use karke V pattern banayenge"],
+              "code": `
+function printNumberVPattern(n) {
+    for(let i = 1; i <= n; i++) {
+        let pattern = '';
+        
+        // Print left spaces and number
+        pattern += ' '.repeat(i - 1) + i;
+        
+        // Print middle spaces and right number (except for last row)
+        if(i !== n) {
+            pattern += ' '.repeat(2 * (n - i) - 1) + i;
+        }
+        
+        console.log(pattern);
+    }
+}
+
+// Example Usage
+const rows = parseInt(prompt("Enter number of rows:"));
+printNumberVPattern(rows);`,
+              "explanation": [
+                "🔹 Row number ko pattern me use karte hain",
+                "🔹 Spaces ki calculation same rehti hai",
+                "🔹 Different visual effect create hota hai"
+              ]
+            },
+            {
+              "method": "Method 3: Using Character Pattern",
+              "approach": ["🔹 Alphabets ka use karke V pattern banayenge"],
+              "code": `
+function printCharacterVPattern(n) {
+    for(let i = 0; i < n; i++) {
+        let pattern = '';
+        
+        // Print left spaces and character
+        pattern += ' '.repeat(i) + String.fromCharCode(65 + i);
+        
+        // Print middle spaces and right character (except for last row)
+        if(i !== n - 1) {
+            pattern += ' '.repeat(2 * (n - i - 1) - 1) + String.fromCharCode(65 + i);
+        }
+        
+        console.log(pattern);
+    }
+}
+
+// Example Usage
+const rows = parseInt(prompt("Enter number of rows:"));
+printCharacterVPattern(rows);`,
+              "explanation": [
+                "🔹 ASCII values se alphabets generate karte hain",
+                "🔹 A se start karke sequential alphabets use hote hain",
+                "🔹 Symmetric V shape pattern banta hai"
+              ]
+            },
+            {
+              "method": "Method 4: Using Custom Characters",
+              "approach": ["🔹 User defined characters se V pattern banayenge"],
+              "code": `
+function printCustomVPattern(n, char) {
+    for(let i = 1; i <= n; i++) {
+        let pattern = '';
+        
+        // Left side pattern
+        for(let j = 1; j <= n * 2 - 1; j++) {
+            if(j === i) pattern += char;
+            else if(j === 2 * n - i) pattern += char;
+            else pattern += ' ';
+        }
+        
+        console.log(pattern);
+    }
+}
+
+// Example Usage
+const rows = parseInt(prompt("Enter number of rows:"));
+const character = prompt("Enter character to print:") || '*';
+printCustomVPattern(rows, character);`,
+              "explanation": [
+                "🔹 User se custom character input lete hain",
+                "🔹 Single loop me pure pattern ko handle karte hain",
+                "🔹 More flexible approach for different characters"
+              ]
+            }
+          ],
+          "output": `
+Example Outputs:
+
+Star Pattern (n=5):
+*       *
+ *     *
+  *   *
+   * *
+    *
+
+Number Pattern (n=5):
+1       1
+ 2     2
+  3   3
+   4 4
+    5
+
+Character Pattern (n=5):
+A       A
+ B     B
+  C   C
+   D D
+    E`,
+        },
+        "practiceProblems": [
+          "🔹 Inverted V pattern implement karo",
+          "🔹 Double V pattern banao",
+          "🔹 Hollow V pattern with borders banao",
+          "🔹 Different characters ka alternate use karke V pattern banao"
+        ],
+        "interviewQuestions": [
+          "🔹 V pattern ke liye space complexity kaise calculate karenge?",
+          "🔹 Pattern me symmetry maintain karne ke liye kya points important hain?",
+          "🔹 Different approaches ki time complexity compare karo",
+          "🔹 Large input ke case me kya challenges ho sakte hain?"
+        ],
+        "comparisonTable": [
+          {
+            "approach": "Star Pattern",
+            "timeComplexity": "O(n)",
+            "spaceComplexity": "O(n)",
+            "pros": "Simple and classic implementation",
+            "cons": "Limited to single character"
+          },
+          {
+            "approach": "Number Pattern",
+            "timeComplexity": "O(n)",
+            "spaceComplexity": "O(n)",
+            "pros": "Shows row position clearly",
+            "cons": "Numbers can affect alignment"
+          },
+          {
+            "approach": "Character Pattern",
+            "timeComplexity": "O(n)",
+            "spaceComplexity": "O(n)",
+            "pros": "Alphabetical progression looks good",
+            "cons": "Limited to 26 characters"
+          },
+          {
+            "approach": "Custom Pattern",
+            "timeComplexity": "O(n²)",
+            "spaceComplexity": "O(n)",
+            "pros": "Most flexible approach",
+            "cons": "More complex implementation"
+          }
+        ],
+        "conclusion": [
+          "🔹 Space calculation is crucial for V pattern",
+          "🔹 Choose appropriate character type based on requirement",
+          "🔹 Consider pattern width for different inputs",
+          "🔹 Maintain symmetry for visual appeal"
+        ]
+      },
       // Q-22. X Pattern
+      {
+        "title": "X Pattern",
+        "description": "X shape pattern print karne ke multiple approaches explore karenge.",
+        "problemStatement": "Ek function likho jo n rows ke liye X pattern print kare. Pattern me spaces aur characters ka arrangement X shape me hona chahiye.",
+        "algorithm": [
+          "🔹 User se number of rows (n) input lo (odd number hona chahiye)",
+          "🔹 Outer loop rows ke liye (1 to n)",
+          "🔹 Inner loop columns ke liye (1 to n)",
+          "🔹 Check karo agar current position diagonal par hai",
+          "🔹 Pattern me spaces aur characters arrange karo"
+        ],
+        "solution": {
+          "methods": [
+            {
+              "method": "Method 1: Using Stars Pattern",
+              "approach": ["🔹 Stars (*) aur spaces ka use karke X shape banayenge"],
+              "code": `
+function printXPattern(n) {
+    // Check if n is odd
+    if (n % 2 === 0) {
+        console.log("Please enter an odd number");
+        return;
+    }
+    
+    for(let i = 0; i < n; i++) {
+        let pattern = '';
+        
+        for(let j = 0; j < n; j++) {
+            // Check if current position is on either diagonal
+            if(i === j || i + j === n - 1) {
+                pattern += '*';
+            } else {
+                pattern += ' ';
+            }
+        }
+        
+        console.log(pattern);
+    }
+}
 
+// Example Usage
+const rows = parseInt(prompt("Enter an odd number of rows:"));
+printXPattern(rows);`,
+              "explanation": [
+                "🔹 Input validation for odd number",
+                "🔹 Two diagonals ke intersection points par stars print hote hain",
+                "🔹 Baki positions par spaces print hote hain"
+              ]
+            },
+            {
+              "method": "Method 2: Using Numbers Pattern",
+              "approach": ["🔹 Row/Column numbers ka use karke X pattern banayenge"],
+              "code": `
+function printNumberXPattern(n) {
+    if (n % 2 === 0) {
+        console.log("Please enter an odd number");
+        return;
+    }
+    
+    for(let i = 0; i < n; i++) {
+        let pattern = '';
+        
+        for(let j = 0; j < n; j++) {
+            if(i === j) {
+                pattern += i + 1;
+            } else if(i + j === n - 1) {
+                pattern += (n - i);
+            } else {
+                pattern += ' ';
+            }
+        }
+        
+        console.log(pattern);
+    }
+}
+
+// Example Usage
+const rows = parseInt(prompt("Enter an odd number of rows:"));
+printNumberXPattern(rows);`,
+              "explanation": [
+                "🔹 Forward diagonal par row number print hota hai",
+                "🔹 Backward diagonal par reverse order numbers print hote hain",
+                "🔹 Dynamic number pattern create hota hai"
+              ]
+            },
+            {
+              "method": "Method 3: Using Character Pattern",
+              "approach": ["🔹 Alphabets ka use karke X pattern banayenge"],
+              "code": `
+function printCharacterXPattern(n) {
+    if (n % 2 === 0) {
+        console.log("Please enter an odd number");
+        return;
+    }
+    
+    for(let i = 0; i < n; i++) {
+        let pattern = '';
+        
+        for(let j = 0; j < n; j++) {
+            if(i === j || i + j === n - 1) {
+                pattern += String.fromCharCode(65 + i);
+            } else {
+                pattern += ' ';
+            }
+        }
+        
+        console.log(pattern);
+    }
+}
+
+// Example Usage
+const rows = parseInt(prompt("Enter an odd number of rows:"));
+printCharacterXPattern(rows);`,
+              "explanation": [
+                "🔹 ASCII values se alphabets generate karte hain",
+                "🔹 Diagonal positions par row ke according alphabet print hota hai",
+                "🔹 A se start karke sequential alphabets use hote hain"
+              ]
+            },
+            {
+              "method": "Method 4: Using Custom Pattern",
+              "approach": ["🔹 User defined character aur style se X pattern banayenge"],
+              "code": `
+function printCustomXPattern(n, char = '*', style = 'solid') {
+    if (n % 2 === 0) {
+        console.log("Please enter an odd number");
+        return;
+    }
+    
+    for(let i = 0; i < n; i++) {
+        let pattern = '';
+        
+        for(let j = 0; j < n; j++) {
+            if(style === 'hollow') {
+                // For hollow pattern, print char only at edges
+                if((i === j && (i === 0 || i === n-1)) || 
+                   (i + j === n-1 && (i === 0 || i === n-1)) || 
+                   (i === Math.floor(n/2) && j === Math.floor(n/2))) {
+                    pattern += char;
+                } else {
+                    pattern += ' ';
+                }
+            } else {
+                // For solid pattern
+                if(i === j || i + j === n-1) {
+                    pattern += char;
+                } else {
+                    pattern += ' ';
+                }
+            }
+        }
+        
+        console.log(pattern);
+    }
+}
+
+// Example Usage
+const rows = parseInt(prompt("Enter an odd number of rows:"));
+const character = prompt("Enter character to print:") || '*';
+const style = prompt("Enter style (solid/hollow):") || 'solid';
+printCustomXPattern(rows, character, style);`,
+              "explanation": [
+                "🔹 Custom character input support",
+                "🔹 Solid ya hollow pattern option",
+                "🔹 Center point special handling",
+                "🔹 Flexible and customizable approach"
+              ]
+            }
+          ],
+          "output": `
+Example Outputs:
+
+Star Pattern (n=5):
+*   *
+ * *
+  *
+ * *
+*   *
+
+Number Pattern (n=5):
+1   5
+ 2 4
+  3
+ 2 4
+1   5
+
+Character Pattern (n=5):
+A   A
+ B B
+  C
+ D D
+E   E`,
+        },
+        "practiceProblems": [
+          "🔹 Colored X pattern implement karo (using ANSI colors)",
+          "🔹 Multi-character X pattern banao",
+          "🔹 Nested X patterns create karo",
+          "🔹 Dynamic size adjustment based on character width"
+        ],
+        "interviewQuestions": [
+          "🔹 X pattern me center point kaise handle karenge?",
+          "🔹 Pattern symmetry kaise maintain karenge?",
+          "🔹 Even number input ke case me kya approaches ho sakti hain?",
+          "🔹 Space complexity ko kaise optimize kar sakte hain?"
+        ],
+        "comparisonTable": [
+          {
+            "approach": "Simple Star Pattern",
+            "timeComplexity": "O(n²)",
+            "spaceComplexity": "O(n)",
+            "pros": "Easy to implement and understand",
+            "cons": "Basic functionality only"
+          },
+          {
+            "approach": "Number Pattern",
+            "timeComplexity": "O(n²)",
+            "spaceComplexity": "O(n)",
+            "pros": "Dynamic number sequence",
+            "cons": "Numbers can affect alignment"
+          },
+          {
+            "approach": "Character Pattern",
+            "timeComplexity": "O(n²)",
+            "spaceComplexity": "O(n)",
+            "pros": "Alphabetical sequence",
+            "cons": "Limited to 26 characters"
+          },
+          {
+            "approach": "Custom Pattern",
+            "timeComplexity": "O(n²)",
+            "spaceComplexity": "O(n)",
+            "pros": "Highly flexible and customizable",
+            "cons": "More complex implementation"
+          }
+        ],
+        "conclusion": [
+          "🔹 Input validation for odd numbers is important",
+          "🔹 Center point handling requires special attention",
+          "🔹 Pattern symmetry is crucial for visual appeal",
+          "🔹 Custom patterns offer more flexibility but need careful implementation"
+        ]
+      }
     ],
   },
   // 4️⃣ Arrays & Searching Algorithms
@@ -2436,16 +3628,848 @@ Number Pattern:
     category: "Arrays & Searching Algorithms",
     questions: [
       // Q-23. Sum of Array Elements
+      {
+        "title": "Sum of Array Elements",
+        "description": "Array ke elements ka sum calculate karne ke multiple approaches explore karenge.",
+        "problemStatement": "Ek function likho jo array ke saare elements ka sum calculate kare. Different approaches implement karke performance compare karo.",
+        "algorithm": [
+          "🔹 Array input lo",
+          "🔹 Different methods se array elements ka sum calculate karo",
+          "🔹 Optimization techniques implement karo",
+          "🔹 Edge cases handle karo"
+        ],
+        "solution": {
+          "methods": [
+            {
+              "method": "Method 1: Using For Loop",
+              "approach": ["🔹 Traditional for loop se array traverse karke sum calculate karenge"],
+              "code": `
+function calculateSum(arr) {
+    let sum = 0;
+    for(let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+    return sum;
+}
 
+// Example Usage
+const array = [1, 2, 3, 4, 5];
+console.log("Sum:", calculateSum(array));`,
+              "explanation": [
+                "🔹 Simple iteration through array",
+                "🔹 Running sum maintain karte hain",
+                "🔹 Basic and straightforward approach"
+              ]
+            },
+            {
+              "method": "Method 2: Using Reduce Method",
+              "approach": ["🔹 Array reduce() method ka use karke sum calculate karenge"],
+              "code": `
+function calculateSumReduce(arr) {
+    return arr.reduce((sum, current) => sum + current, 0);
+}
+
+// Example Usage
+const array = [1, 2, 3, 4, 5];
+console.log("Sum:", calculateSumReduce(array));`,
+              "explanation": [
+                "🔹 Modern and functional approach",
+                "🔹 Initial value 0 se start karte hain",
+                "🔹 Concise implementation"
+              ]
+            },
+            {
+              "method": "Method 3: Using Recursive Approach",
+              "approach": ["🔹 Recursion ka use karke array sum calculate karenge"],
+              "code": `
+function calculateSumRecursive(arr, index = 0) {
+    // Base case
+    if (index >= arr.length) return 0;
+    
+    // Recursive case
+    return arr[index] + calculateSumRecursive(arr, index + 1);
+}
+
+// Example Usage
+const array = [1, 2, 3, 4, 5];
+console.log("Sum:", calculateSumRecursive(array));`,
+              "explanation": [
+                "🔹 Base case handles array end",
+                "🔹 Each recursive call adds one element",
+                "🔹 Good for understanding recursion"
+              ]
+            },
+            {
+              "method": "Method 4: Using forEach Method",
+              "approach": ["🔹 forEach() method se array traverse karenge"],
+              "code": `
+function calculateSumForEach(arr) {
+    let sum = 0;
+    arr.forEach(num => sum += num);
+    return sum;
+}
+
+// Example Usage
+const array = [1, 2, 3, 4, 5];
+console.log("Sum:", calculateSumForEach(array));`,
+              "explanation": [
+                "🔹 Modern array method usage",
+                "🔹 Clean and readable code",
+                "🔹 Good for simple summation"
+              ]
+            },
+            {
+              "method": "Method 5: Optimized for Large Arrays",
+              "approach": ["🔹 Chunk processing for large arrays"],
+              "code": `
+function calculateSumOptimized(arr, chunkSize = 1000) {
+    let sum = 0;
+    
+    // Process array in chunks
+    for(let i = 0; i < arr.length; i += chunkSize) {
+        const chunk = arr.slice(i, i + chunkSize);
+        sum += chunk.reduce((s, num) => s + num, 0);
+    }
+    
+    return sum;
+}
+
+// Example Usage
+const largeArray = Array.from({length: 10000}, (_, i) => i + 1);
+console.log("Sum:", calculateSumOptimized(largeArray));`,
+              "explanation": [
+                "🔹 Arrays ko chunks me process karta hai",
+                "🔹 Memory efficient for large arrays",
+                "🔹 Prevents stack overflow"
+              ]
+            }
+          ],
+          "output": `
+Example Output:
+Sum: 15 (for array [1, 2, 3, 4, 5])`
+        },
+        "practiceProblems": [
+          "🔹 Calculate sum of even numbers only",
+          "🔹 Calculate sum of elements at even indices",
+          "🔹 Find sum of positive and negative numbers separately",
+          "🔹 Calculate running sum of array"
+        ],
+        "interviewQuestions": [
+          "🔹 Different approaches ki time complexity compare karo",
+          "🔹 Large arrays ke liye best approach kya hoga?",
+          "🔹 Memory optimization ke liye kya steps le sakte hain?",
+          "🔹 Parallel processing kaise implement kar sakte hain?"
+        ],
+        "comparisonTable": [
+          {
+            "approach": "For Loop",
+            "timeComplexity": "O(n)",
+            "spaceComplexity": "O(1)",
+            "pros": "Simple and straightforward",
+            "cons": "Basic implementation only"
+          },
+          {
+            "approach": "Reduce Method",
+            "timeComplexity": "O(n)",
+            "spaceComplexity": "O(1)",
+            "pros": "Clean and functional",
+            "cons": "May be slower than for loop"
+          },
+          {
+            "approach": "Recursive",
+            "timeComplexity": "O(n)",
+            "spaceComplexity": "O(n)",
+            "pros": "Good for learning recursion",
+            "cons": "Stack overflow risk for large arrays"
+          },
+          {
+            "approach": "forEach",
+            "timeComplexity": "O(n)",
+            "spaceComplexity": "O(1)",
+            "pros": "Modern and readable",
+            "cons": "Cannot break the loop early"
+          },
+          {
+            "approach": "Chunked Processing",
+            "timeComplexity": "O(n)",
+            "spaceComplexity": "O(k) where k is chunk size",
+            "pros": "Good for large arrays",
+            "cons": "More complex implementation"
+          }
+        ],
+        "conclusion": [
+          "🔹 For loop is best for simple cases",
+          "🔹 Reduce method provides clean code",
+          "🔹 Consider array size when choosing approach",
+          "🔹 Optimize for specific use cases"
+        ]
+      },
       // Q-24. Maximum Element from the Array
+      {
+        "title": "Maximum Element from the Array",
+        "description": "Array me se maximum element find karne ke multiple approaches explore karenge.",
+        "problemStatement": "Ek function likho jo array ka maximum element find kare. Different approaches implement karke performance compare karo.",
+        "algorithm": [
+          "🔹 Array input lo",
+          "🔹 Different methods se maximum element find karo",
+          "🔹 Edge cases handle karo",
+          "🔹 Performance optimization karo"
+        ],
+        "solution": {
+          "methods": [
+            {
+              "method": "Method 1: Using For Loop",
+              "approach": ["🔹 Traditional for loop approach for finding maximum"],
+              "code": `
+function findMaxElement(arr) {
+    if (!arr || arr.length === 0) return null;
+    
+    let max = arr[0];
+    for(let i = 1; i < arr.length; i++) {
+        if(arr[i] > max) {
+            max = arr[i];
+        }
+    }
+    return max;
+}
 
+// Example Usage
+const array = [3, 7, 2, 9, 4, 1];
+console.log("Maximum element:", findMaxElement(array));`,
+              "explanation": [
+                "🔹 First element ko initial max mante hain",
+                "🔹 Array elements ko compare karke max update karte hain",
+                "🔹 Simple and efficient approach"
+              ]
+            },
+            {
+              "method": "Method 2: Using Math.max()",
+              "approach": ["🔹 Built-in Math.max() with spread operator"],
+              "code": `
+function findMaxUsingMath(arr) {
+    if (!arr || arr.length === 0) return null;
+    return Math.max(...arr);
+}
+
+// Example Usage
+const array = [3, 7, 2, 9, 4, 1];
+console.log("Maximum element:", findMaxUsingMath(array));`,
+              "explanation": [
+                "🔹 Spread operator array ko individual elements me convert karta hai",
+                "🔹 Math.max() maximum element find karta hai",
+                "🔹 Concise but limited to array size"
+              ]
+            },
+            {
+              "method": "Method 3: Using Reduce Method",
+              "approach": ["🔹 Array reduce() method for finding maximum"],
+              "code": `
+function findMaxUsingReduce(arr) {
+    if (!arr || arr.length === 0) return null;
+    return arr.reduce((max, current) => Math.max(max, current), arr[0]);
+}
+
+// Example Usage
+const array = [3, 7, 2, 9, 4, 1];
+console.log("Maximum element:", findMaxUsingReduce(array));`,
+              "explanation": [
+                "🔹 Reduce method har element ko compare karta hai",
+                "🔹 Initial value first element hoti hai",
+                "🔹 Functional programming approach"
+              ]
+            },
+            {
+              "method": "Method 4: Using Sorting",
+              "approach": ["🔹 Array ko sort karke last element return karenge"],
+              "code": `
+function findMaxUsingSorting(arr) {
+    if (!arr || arr.length === 0) return null;
+    return [...arr].sort((a, b) => a - b)[arr.length - 1];
+}
+
+// Example Usage
+const array = [3, 7, 2, 9, 4, 1];
+console.log("Maximum element:", findMaxUsingSorting(array));`,
+              "explanation": [
+                "🔹 Array ka copy create karte hain",
+                "🔹 Sort karke last element return karte hain",
+                "🔹 Original array unchanged rehta hai"
+              ]
+            },
+            {
+              "method": "Method 5: Using Divide and Conquer",
+              "approach": ["🔹 Array ko divide karke maximum find karenge"],
+              "code": `
+function findMaxDivideConquer(arr, start = 0, end = arr.length - 1) {
+    if (!arr || arr.length === 0) return null;
+    
+    // Base case: single element
+    if (start === end) return arr[start];
+    
+    // Find middle point
+    const mid = Math.floor((start + end) / 2);
+    
+    // Recursively find maximum in both halves
+    const leftMax = findMaxDivideConquer(arr, start, mid);
+    const rightMax = findMaxDivideConquer(arr, mid + 1, end);
+    
+    // Return maximum of two halves
+    return Math.max(leftMax, rightMax);
+}
+
+// Example Usage
+const array = [3, 7, 2, 9, 4, 1];
+console.log("Maximum element:", findMaxDivideConquer(array));`,
+              "explanation": [
+                "🔹 Array ko recursively divide karte hain",
+                "🔹 Each half ka maximum find karte hain",
+                "🔹 Finally dono maximum ko compare karte hain"
+              ]
+            }
+          ],
+          "output": `
+Example Output:
+Maximum element: 9 (from array [3, 7, 2, 9, 4, 1])`
+        },
+        "practiceProblems": [
+          "🔹 Find second largest element",
+          "🔹 Find maximum element in sorted rotated array",
+          "🔹 Find maximum element with index",
+          "🔹 Find local maxima in array"
+        ],
+        "interviewQuestions": [
+          "🔹 Different approaches ki time complexity compare karo",
+          "🔹 Large arrays ke liye konsa approach best rahega?",
+          "🔹 Space optimization ke liye kya steps le sakte hain?",
+          "🔹 Edge cases kaise handle karenge?"
+        ],
+        "comparisonTable": [
+          {
+            "approach": "For Loop",
+            "timeComplexity": "O(n)",
+            "spaceComplexity": "O(1)",
+            "pros": "Simple and memory efficient",
+            "cons": "Basic linear search"
+          },
+          {
+            "approach": "Math.max()",
+            "timeComplexity": "O(n)",
+            "spaceComplexity": "O(1)",
+            "pros": "Clean and concise code",
+            "cons": "Limited by array size"
+          },
+          {
+            "approach": "Reduce Method",
+            "timeComplexity": "O(n)",
+            "spaceComplexity": "O(1)",
+            "pros": "Functional approach",
+            "cons": "May be slower than for loop"
+          },
+          {
+            "approach": "Sorting",
+            "timeComplexity": "O(n log n)",
+            "spaceComplexity": "O(n)",
+            "pros": "Works for other problems too",
+            "cons": "Not efficient for just finding max"
+          },
+          {
+            "approach": "Divide and Conquer",
+            "timeComplexity": "O(n)",
+            "spaceComplexity": "O(log n)",
+            "pros": "Parallelizable",
+            "cons": "More complex implementation"
+          }
+        ],
+        "conclusion": [
+          "🔹 Simple for loop is often the best choice",
+          "🔹 Math.max() is good for small arrays",
+          "🔹 Consider parallelization for very large arrays",
+          "🔹 Always handle edge cases properly"
+        ]
+      },
       // Q-25. Finding Prime Numbers
+      {
+        "title": "Finding Prime Numbers",
+        "description": "Given range me prime numbers find karne ke multiple approaches explore karenge.",
+        "problemStatement": "Ek function likho jo given range (start to end) me saare prime numbers find kare. Different approaches implement karke performance compare karo.",
+        "algorithm": [
+          "🔹 User se range input lo (start and end numbers)",
+          "🔹 Different methods se prime numbers find karo",
+          "🔹 Optimization techniques implement karo",
+          "🔹 Result array return karo"
+        ],
+        "solution": {
+          "methods": [
+            {
+              "method": "Method 1: Basic Approach",
+              "approach": ["🔹 Simple iterative approach to check each number"],
+              "code": `
+function findPrimeNumbers(start, end) {
+    // Helper function to check if a number is prime
+    function isPrime(num) {
+        if (num <= 1) return false;
+        if (num <= 3) return true;
+        if (num % 2 === 0 || num % 3 === 0) return false;
+        
+        for(let i = 5; i * i <= num; i += 6) {
+            if (num % i === 0 || num % (i + 2) === 0) return false;
+        }
+        return true;
+    }
+    
+    const primes = [];
+    for(let num = start; num <= end; num++) {
+        if(isPrime(num)) {
+            primes.push(num);
+        }
+    }
+    return primes;
+}
 
+// Example Usage
+const start = parseInt(prompt("Enter start number:"));
+const end = parseInt(prompt("Enter end number:"));
+console.log("Prime numbers:", findPrimeNumbers(start, end));`,
+              "explanation": [
+                "🔹 Helper function checks if number is prime",
+                "🔹 Optimized by checking till square root",
+                "🔹 Uses 6k ± 1 optimization"
+              ]
+            },
+            {
+              "method": "Method 2: Sieve of Eratosthenes",
+              "approach": ["🔹 Efficient algorithm for finding prime numbers"],
+              "code": `
+function findPrimesUsingSieve(start, end) {
+    // Create array of true values
+    const sieve = new Array(end + 1).fill(true);
+    sieve[0] = sieve[1] = false;
+    
+    // Mark non-prime numbers in sieve
+    for(let i = 2; i * i <= end; i++) {
+        if(sieve[i]) {
+            for(let j = i * i; j <= end; j += i) {
+                sieve[j] = false;
+            }
+        }
+    }
+    
+    // Collect prime numbers in range
+    const primes = [];
+    for(let i = Math.max(2, start); i <= end; i++) {
+        if(sieve[i]) {
+            primes.push(i);
+        }
+    }
+    
+    return primes;
+}
+
+// Example Usage
+const start = parseInt(prompt("Enter start number:"));
+const end = parseInt(prompt("Enter end number:"));
+console.log("Prime numbers:", findPrimesUsingSieve(start, end));`,
+              "explanation": [
+                "🔹 Creates boolean array for marking primes",
+                "🔹 More efficient for finding multiple primes",
+                "🔹 Space complexity is higher"
+              ]
+            },
+            {
+              "method": "Method 3: Segmented Sieve",
+              "approach": ["🔹 Memory efficient version of Sieve algorithm"],
+              "code": `
+function findPrimesUsingSegmentedSieve(start, end) {
+    const SEGMENT_SIZE = 1000;
+    
+    // Find primes up to sqrt(end) using basic sieve
+    const sqrtEnd = Math.floor(Math.sqrt(end));
+    const basePrimes = findPrimesUsingSieve(2, sqrtEnd);
+    
+    const primes = [];
+    
+    // Process segments
+    for(let low = start; low <= end; low += SEGMENT_SIZE) {
+        let high = Math.min(low + SEGMENT_SIZE - 1, end);
+        
+        // Create segment array
+        let segment = new Array(high - low + 1).fill(true);
+        
+        // Mark non-primes in current segment
+        for(let prime of basePrimes) {
+            let firstMultiple = Math.max(prime * prime, 
+                Math.ceil(low / prime) * prime);
+            
+            for(let j = firstMultiple; j <= high; j += prime) {
+                segment[j - low] = false;
+            }
+        }
+        
+        // Collect primes from segment
+        for(let i = 0; i < segment.length; i++) {
+            if(segment[i] && (low + i) >= Math.max(2, start)) {
+                primes.push(low + i);
+            }
+        }
+    }
+    
+    return primes;
+}
+
+// Example Usage
+const start = parseInt(prompt("Enter start number:"));
+const end = parseInt(prompt("Enter end number:"));
+console.log("Prime numbers:", findPrimesUsingSegmentedSieve(start, end));`,
+              "explanation": [
+                "🔹 Divides range into segments",
+                "🔹 Uses less memory than regular sieve",
+                "🔹 Good for large ranges"
+              ]
+            }
+          ],
+          "output": `
+Example Output:
+Enter start number: 10
+Enter end number: 30
+Prime numbers: [11, 13, 17, 19, 23, 29]`
+        },
+        "practiceProblems": [
+          "🔹 Find twin primes in a range",
+          "🔹 Check if number is prime using probabilistic methods",
+          "🔹 Find prime factors of a number",
+          "🔹 Generate first n prime numbers"
+        ],
+        "interviewQuestions": [
+          "🔹 Different prime finding algorithms ki complexity compare karo",
+          "🔹 Memory optimization ke liye kya techniques use kar sakte hain?",
+          "🔹 Large numbers ke liye konsa approach best rahega?",
+          "🔹 Parallel processing kaise implement kar sakte hain?"
+        ],
+        "comparisonTable": [
+          {
+            "approach": "Basic Approach",
+            "timeComplexity": "O(n * √n)",
+            "spaceComplexity": "O(1)",
+            "pros": "Simple to implement, good for small ranges",
+            "cons": "Slow for large ranges"
+          },
+          {
+            "approach": "Sieve of Eratosthenes",
+            "timeComplexity": "O(n log log n)",
+            "spaceComplexity": "O(n)",
+            "pros": "Very efficient for finding all primes",
+            "cons": "High memory usage"
+          },
+          {
+            "approach": "Segmented Sieve",
+            "timeComplexity": "O(n log log n)",
+            "spaceComplexity": "O(√n)",
+            "pros": "Memory efficient, good for large ranges",
+            "cons": "More complex implementation"
+          }
+        ],
+        "conclusion": [
+          "🔹 Choose algorithm based on range size",
+          "🔹 Consider memory constraints",
+          "🔹 Optimize for specific use case",
+          "🔹 Handle edge cases properly"
+        ]
+      },
       // Q-26. Checking for Automorphic Number
-
+      {
+        "title": "Checking for Automorphic Number",
+        "description": "Automorphic number check karne ke multiple approaches explore karenge.",
+        "problemStatement": "Ek function likho jo check kare ki given number automorphic hai ya nahi. Automorphic number wo hota hai jiska square us number ke last digits se match karta hai (Example: 25² = 625, ends with 25).",
+        "algorithm": [
+          "🔹 User se number input lo",
+          "🔹 Number ka square calculate karo",
+          "🔹 Square ke last digits ko original number se compare karo",
+          "🔹 Different approaches implement karo"
+        ],
+        "solution": {
+          "methods": [
+            {
+              "method": "Method 1: Using String Manipulation",
+              "approach": ["🔹 Number and square ko string me convert karke compare karenge"],
+              "code": `
+      function isAutomorphic(num) {
+          const square = (num * num).toString();
+          const numStr = num.toString();
+          
+          // Check if square ends with original number
+          return square.endsWith(numStr);
+      }
+      
+      // Example Usage
+      const number = parseInt(prompt("Enter a number:"));
+      const result = isAutomorphic(number);
+      console.log(\`\${number} is\${result ? '' : ' not'} an Automorphic Number\`);`,
+              "explanation": [
+                "🔹 Number ka square calculate karte hain",
+                "🔹 endsWith() method se check karte hain",
+                "🔹 Simple and readable approach"
+              ]
+            },
+            {
+              "method": "Method 2: Using Mathematical Approach",
+              "approach": ["🔹 Mathematical operations ka use karke digits compare karenge"],
+              "code": `
+      function isAutomorphic(num) {
+          const square = num * num;
+          let temp = num;
+          let divisor = 1;
+          
+          // Calculate divisor based on number of digits
+          while(temp > 0) {
+              temp = Math.floor(temp / 10);
+              divisor *= 10;
+          }
+          
+          // Compare last digits of square with original number
+          return square % divisor === num;
+      }
+      
+      // Example Usage
+      const number = parseInt(prompt("Enter a number:"));
+      const result = isAutomorphic(number);
+      console.log(\`\${number} is\${result ? '' : ' not'} an Automorphic Number\`);`,
+              "explanation": [
+                "🔹 Divisor calculate karte hain based on digits",
+                "🔹 Modulo operator se last digits extract karte hain",
+                "🔹 Memory efficient approach"
+              ]
+            },
+            {
+              "method": "Method 3: Using Regular Expression",
+              "approach": ["🔹 Regular expression ka use karke pattern match karenge"],
+              "code": `
+      function isAutomorphic(num) {
+          const square = num * num;
+          const pattern = new RegExp(\`\${num}$\`);
+          
+          return pattern.test(square.toString());
+      }
+      
+      // Example Usage
+      const number = parseInt(prompt("Enter a number:"));
+      const result = isAutomorphic(number);
+      console.log(\`\${number} is\${result ? '' : ' not'} an Automorphic Number\`);`,
+              "explanation": [
+                "🔹 RegExp pattern create karte hain",
+                "🔹 test() method se match check karte hain",
+                "🔹 Flexible pattern matching approach"
+              ]
+            }
+          ],
+          "output": `
+      Example Outputs:
+      Enter number: 25
+      25 is an Automorphic Number (25² = 625)
+      
+      Enter number: 76
+      76 is an Automorphic Number (76² = 5776)
+      
+      Enter number: 7
+      7 is not an Automorphic Number (7² = 49)`
+        },
+        "practiceProblems": [
+          "🔹 Find all automorphic numbers in a range",
+          "🔹 Check if square root of automorphic number is also automorphic",
+          "🔹 Find largest n-digit automorphic number",
+          "🔹 Generate first n automorphic numbers"
+        ],
+        "interviewQuestions": [
+          "🔹 Compare different approaches ki time complexity",
+          "🔹 Large numbers ke liye kaise handle karenge?",
+          "🔹 Mathematical approach vs String approach - pros and cons",
+          "🔹 Memory optimization ke liye kya steps le sakte hain?"
+        ],
+        "comparisonTable": [
+          {
+            "approach": "String Manipulation",
+            "timeComplexity": "O(d) where d is digit count",
+            "spaceComplexity": "O(d)",
+            "pros": "Simple to implement and understand",
+            "cons": "Extra memory for string conversion"
+          },
+          {
+            "approach": "Mathematical",
+            "timeComplexity": "O(d)",
+            "spaceComplexity": "O(1)",
+            "pros": "Memory efficient, no string conversion",
+            "cons": "More complex logic"
+          },
+          {
+            "approach": "Regular Expression",
+            "timeComplexity": "O(d)",
+            "spaceComplexity": "O(d)",
+            "pros": "Flexible pattern matching",
+            "cons": "RegExp overhead"
+          }
+        ],
+        "conclusion": [
+          "🔹 String manipulation approach is most readable",
+          "🔹 Mathematical approach is most memory efficient",
+          "🔹 Choose approach based on requirements",
+          "🔹 Consider input size and constraints"
+        ]
+      },
       // Q-27. Strong Number Validation
+      {
+        "title": "Strong Number Validation",
+        "description": "Strong number validation ke multiple approaches explore karenge.",
+        "problemStatement": "Ek function likho jo check kare ki given number strong number hai ya nahi. Strong number wo hota hai jisme digits ke factorials ka sum original number ke equal ho (Example: 145 = 1! + 4! + 5! = 1 + 24 + 120 = 145).",
+        "algorithm": [
+          "🔹 User se number input lo",
+          "🔹 Number ke har digit ka factorial calculate karo",
+          "🔹 Factorials ka sum karo",
+          "🔹 Sum ko original number se compare karo"
+        ],
+        "solution": {
+          "methods": [
+            {
+              "method": "Method 1: Using String Manipulation",
+              "approach": ["🔹 Number ko string me convert karke digits process karenge"],
+              "code": `
+function isStrongNumber(num) {
+    // Helper function to calculate factorial
+    function factorial(n) {
+        if (n <= 1) return 1;
+        return n * factorial(n - 1);
+    }
+    
+    const sum = String(num)
+        .split('')
+        .reduce((sum, digit) => sum + factorial(Number(digit)), 0);
+    
+    return sum === num;
+}
 
+// Example Usage
+const number = parseInt(prompt("Enter a number:"));
+const result = isStrongNumber(number);
+console.log(\`\${number} is\${result ? '' : ' not'} a Strong Number\`);`,
+              "explanation": [
+                "🔹 Helper function factorial() calculates digit factorial",
+                "🔹 String split se digits alag karte hain",
+                "🔹 reduce() se factorials ka sum calculate karte hain"
+              ]
+            },
+            {
+              "method": "Method 2: Using Mathematical Approach",
+              "approach": ["🔹 Mathematical operations se digits extract karenge"],
+              "code": `
+function isStrongNumber(num) {
+    // Precomputed factorials for 0-9
+    const factorials = [1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880];
+    
+    let sum = 0;
+    let temp = num;
+    
+    while (temp > 0) {
+        const digit = temp % 10;
+        sum += factorials[digit];
+        if (sum > num) return false; // Early exit
+        temp = Math.floor(temp / 10);
+    }
+    
+    return sum === num;
+}
+
+// Example Usage
+const number = parseInt(prompt("Enter a number:"));
+const result = isStrongNumber(number);
+console.log(\`\${number} is\${result ? '' : ' not'} a Strong Number\`);`,
+              "explanation": [
+                "🔹 Precomputed factorials array use karte hain",
+                "🔹 Modulo operator se digits extract karte hain",
+                "🔹 Early exit optimization implement ki hai"
+              ]
+            },
+            {
+              "method": "Method 3: Using Array and Loop",
+              "approach": ["🔹 Array methods ka use karke calculation karenge"],
+              "code": `
+function isStrongNumber(num) {
+    // Calculate factorial using loop
+    function factorial(n) {
+        let result = 1;
+        for(let i = 2; i <= n; i++) {
+            result *= i;
+        }
+        return result;
+    }
+    
+    const digits = Array.from(String(num), Number);
+    const sum = digits.reduce((sum, digit) => sum + factorial(digit), 0);
+    
+    return sum === num;
+}
+
+// Example Usage
+const number = parseInt(prompt("Enter a number:"));
+const result = isStrongNumber(number);
+console.log(\`\${number} is\${result ? '' : ' not'} a Strong Number\`);`,
+              "explanation": [
+                "🔹 Loop based factorial calculation",
+                "🔹 Array.from() se digits array banate hain",
+                "🔹 Modern array methods ka use karte hain"
+              ]
+            }
+          ],
+          "output": `
+Example Outputs:
+Enter number: 145
+145 is a Strong Number (1! + 4! + 5! = 145)
+
+Enter number: 40585
+40585 is a Strong Number
+
+Enter number: 123
+123 is not a Strong Number`
+        },
+        "practiceProblems": [
+          "🔹 Given range me strong numbers find karo",
+          "🔹 n-digit strong numbers generate karo",
+          "🔹 Next strong number find karo",
+          "🔹 Largest strong number with given number of digits find karo"
+        ],
+        "interviewQuestions": [
+          "🔹 Different approaches ki time complexity compare karo",
+          "🔹 Memory optimization ke liye kya steps le sakte hain?",
+          "🔹 Large numbers ke liye konsa approach best rahega?",
+          "🔹 Precomputed factorials vs runtime calculation - pros and cons"
+        ],
+        "comparisonTable": [
+          {
+            "approach": "String Manipulation",
+            "timeComplexity": "O(d) where d is digit count",
+            "spaceComplexity": "O(d)",
+            "pros": "Simple to implement and understand",
+            "cons": "Extra memory for string conversion"
+          },
+          {
+            "approach": "Mathematical",
+            "timeComplexity": "O(d)",
+            "spaceComplexity": "O(1)",
+            "pros": "Memory efficient, early exit optimization",
+            "cons": "More complex logic"
+          },
+          {
+            "approach": "Array Methods",
+            "timeComplexity": "O(d)",
+            "spaceComplexity": "O(d)",
+            "pros": "Clean and modern code",
+            "cons": "Multiple array operations overhead"
+          }
+        ],
+        "conclusion": [
+          "🔹 Mathematical approach with precomputed factorials is most efficient",
+          "🔹 Early exit optimization can significantly improve performance",
+          "🔹 Consider input constraints when choosing approach",
+          "🔹 Handle edge cases properly"
+        ]
+      }
     ],
   },
-
 ];

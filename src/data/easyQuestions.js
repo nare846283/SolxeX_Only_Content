@@ -8,54 +8,135 @@ export const easyQuestions = [
         title: "Sum of Two Integers",
         description: "Do integers ka sum find karna hai.",
         problemStatement: "User se do numbers input lo aur unka sum return karo.",
+
         algorithm: [
-          "🔹 User se two integers input lo.",
-          "🔹 + operator ka use karke sum calculate karo.",
-          "🔹 Result return karo.",
+          "🔹 User se two integers input lo",
+          "🔹 + operator ka use karke sum calculate karo",
+          "🔹 Result return karo"
         ],
+
         solution: {
           methods: [
             {
-              method: "Method-1. Using + Operator",
-              approach: [
-                "🔹Do numbers ko directly + operator se add karo",
-                "🔹Result return karo.",
-              ],
+              method: "Method 1: Simple Addition",
+              approach: ["🔹 Direct + operator ka use karke addition"],
               code: `
-function addNumbers(a, b) {
-    return a + b;
-}
-
-// Example
-console.log(addNumbers(5, 7)); // Output: 12
-              `,
+      function addNumbers(a, b) {
+          return a + b;
+      }
+      
+      // Test cases
+      console.log(addNumbers(5, 3));  // Output: 8
+      console.log(addNumbers(-1, 7)); // Output: 6
+      console.log(addNumbers(0, 4));  // Output: 4`,
               explanation: [
-                "🔹Do numbers ko directly + operator se add kiya.",
-                "🔹Result return kiya.",
-              ],
+                "🔹 Function do parameters leta hai: a aur b",
+                "🔹 + operator se simple addition perform karta hai",
+                "🔹 Sum return karta hai"
+              ]
             },
+            {
+              method: "Method 2: Using Reduce",
+              approach: ["🔹 Array.reduce() ka use karke multiple numbers add karna"],
+              code: `
+      function addNumbersReduce(...numbers) {
+          return numbers.reduce((sum, num) => sum + num, 0);
+      }
+      
+      // Test cases
+      console.log(addNumbersReduce(1, 2, 3));     // Output: 6
+      console.log(addNumbersReduce(5, -2, 7, 3)); // Output: 13`,
+              explanation: [
+                "🔹 Rest parameter (...numbers) se multiple inputs accept karta hai",
+                "🔹 reduce() method array ke sabhi elements ko add karta hai",
+                "🔹 Initial value 0 se start karta hai"
+              ]
+            },
+            {
+              method: "Method 3: Input Validation",
+              approach: ["🔹 User input ko validate karke safe addition"],
+              code: `
+      function addNumbersWithValidation(a, b) {
+          // Input validation
+          if (typeof a !== 'number' || typeof b !== 'number') {
+              return "Please provide valid numbers";
+          }
+          
+          // Check for Infinity or NaN
+          if (!Number.isFinite(a) || !Number.isFinite(b)) {
+              return "Numbers must be finite";
+          }
+          
+          return a + b;
+      }
+      
+      // Test cases
+      console.log(addNumbersWithValidation(5, 3));      // Output: 8
+      console.log(addNumbersWithValidation("5", 3));    // Output: Please provide valid numbers
+      console.log(addNumbersWithValidation(Infinity, 3)); // Output: Numbers must be finite`,
+              explanation: [
+                "🔹 typeof check karta hai ki inputs numbers hain",
+                "🔹 Number.isFinite() se Infinity aur NaN check karta hai",
+                "🔹 Valid inputs ke case mein sum return karta hai"
+              ]
+            }
           ],
+          output: `
+Example Output:
+Input: a = 5, b = 3
+Output: 8
+
+Input: a = -1, b = 7
+Output: 6
+
+Input: a = 0, b = 4
+Output: 4`
         },
+
         practiceProblems: [
-          "🔹 Find the sum of three numbers.",
-          "🔹 Calculate the sum of an array of numbers.",
+          "🔹 Teen numbers ka sum calculate karo",
+          "🔹 Array of numbers ka sum nikalo",
+          "🔹 Decimal numbers ka sum calculate karo",
+          "🔹 Negative numbers ka handling add karo"
         ],
+
         interviewQuestions: [
-          "🔹 Kaunse data types ko + operator add kar sakta hai?",
-          "🔹 Concatenation aur Addition me kya difference hai?",
+          "❓ JavaScript mein + operator string concatenation aur numeric addition dono ke liye kaise use hota hai?",
+          "❓ NaN aur Infinity cases ko kaise handle karenge?",
+          "❓ reduce() method kab use karna chahiye?",
+          "❓ Large numbers ke addition mein precision issues kaise handle karenge?"
         ],
+
         comparisonTable: [
           {
-            approach: "Using + Operator",
+            approach: "Simple Addition",
             timeComplexity: "O(1)",
             spaceComplexity: "O(1)",
-            pros: "Simple and efficient",
-            cons: "Limited to two numbers",
+            pros: "Simple, fast for two numbers",
+            cons: "Limited to two numbers only"
           },
+          {
+            approach: "Using Reduce",
+            timeComplexity: "O(n)",
+            spaceComplexity: "O(1)",
+            pros: "Works with multiple numbers",
+            cons: "Slower for just two numbers"
+          },
+          {
+            approach: "With Validation",
+            timeComplexity: "O(1)",
+            spaceComplexity: "O(1)",
+            pros: "Safe, handles edge cases",
+            cons: "Additional overhead"
+          }
         ],
+
         conclusion: [
-          "🔹 + Operator simple aur efficient tarika hai addition ke liye.",
-        ],
+          "🔹 Simple addition is best for basic two number operations",
+          "🔹 Use reduce() when dealing with multiple numbers",
+          "🔹 Always validate inputs in production code",
+          "🔹 Consider precision handling for decimal numbers"
+        ]
       },
       // Q-2. Relation Between Integer and String
       {
@@ -75,35 +156,91 @@ console.log(addNumbers(5, 7)); // Output: 12
                 "🔹 Number ko String me convert karke concatenate karna.",
               ],
               code: `
-function concatenate(num, str) {
-    return num + str;
+function demonstrateTypeCoercion(num, str) {
+    console.log("Number:", num, "Type:", typeof num);
+    console.log("String:", str, "Type:", typeof str);
+    
+    let result = num + str;
+    console.log("Result:", result, "Type:", typeof result);
+    return result;
 }
 
-// Example
-console.log(concatenate(5, "Hello")); // Output: "5Hello"
-              `,
+// Test cases
+console.log(demonstrateTypeCoercion(5, "Hello"));     // Output: "5Hello"
+console.log(demonstrateTypeCoercion(10, " days"));    // Output: "10 days"
+console.log(demonstrateTypeCoercion(42, ""));        // Output: "42"`,
               explanation: [
-                "JavaScript me + operator integer ko string me convert kar deta hai.",
-                "Result return kiya.",
-              ],
+                "🔹 JavaScript automatically number ko string me convert karta hai",
+                "🔹 + operator string concatenation perform karta hai",
+                "🔹 Final result string type ka hota hai"
+              ]
             },
+            {
+              method: "Method 2: Explicit Type Conversion",
+              approach: ["🔹 String() aur Number() ka use karke explicit conversion"],
+              code: `
+function explicitConversion(num, str) {
+  // String to Number conversion
+  console.log("String to Number:", Number(str) || "NaN");
+  
+  // Number to String conversion
+  console.log("Number to String:", String(num));
+  
+  return {
+      numberToString: String(num),
+      stringToNumber: Number(str) || "NaN"
+  };
+}
+
+// Test cases
+console.log(explicitConversion(5, "10"));     // Valid conversion
+console.log(explicitConversion(42, "Hello")); // NaN for invalid number`,
+              explanation: [
+                "🔹 String() function number ko explicitly string me convert karta hai",
+                "🔹 Number() function string ko number me convert karta hai",
+                "🔹 Invalid conversion NaN return karta hai"
+              ]
+            }
           ],
+          output: `
+Example Output:
+Input: num = 5, str = "Hello"
+Number: 5 Type: number
+String: Hello Type: string
+Result: 5Hello Type: string
+
+Input: num = 42, str = "10"
+String to Number: 10
+Number to String: "42"`
         },
         practiceProblems: [
-          "🔹Number aur String ko separate rakhne ke liye kaunse methods use kar sakte hain?",
+          "🔹 Different data types ke saath type coercion test karo",
+          "🔹 Number.toString() aur parseInt() methods ka use karo",
+          "🔹 Template literals ke saath type coercion check karo",
+          "🔹 Edge cases handle karo (undefined, null, NaN)"
         ],
         interviewQuestions: [
-          "🔹 Type Coercion kya hoti hai?",
-          "🔹 Implicit aur Explicit Conversion me kya difference hai?",
+          "❓ JavaScript me type coercion kya hota hai?",
+          "❓ Implicit vs Explicit type conversion me kya difference hai?",
+          "❓ + operator numeric addition aur string concatenation kaise determine karta hai?",
+          "❓ Type coercion ke advantages aur disadvantages kya hain?",
+          "❓ NaN kab generate hota hai type conversion me?"
         ],
         comparisonTable: [
           {
-            approach: "Using + Operator",
+            approach: "Implicit Coercion",
             timeComplexity: "O(1)",
             spaceComplexity: "O(1)",
-            pros: "Simple and efficient",
-            cons: "Limited to two numbers",
+            pros: "Short and convenient",
+            cons: "Can lead to unexpected results"
           },
+          {
+            approach: "Explicit Conversion",
+            timeComplexity: "O(1)",
+            spaceComplexity: "O(1)",
+            pros: "Clear and predictable",
+            cons: "Requires more code"
+          }
         ],
         conclusion: [
           "🔹 JavaScript me + operator String aur Integer ko concatenate kar sakta hai.",
@@ -114,53 +251,78 @@ console.log(concatenate(5, "Hello")); // Output: "5Hello"
         title: "Sum and Message (Type Coercion)",
         description: "Sum aur message ko combine karne par kya hoga, yeh check karna hai.",
         problemStatement: "Ek integer aur ek string ka sum calculate karne par kya hoga, yeh check karo.",
+
         algorithm: [
-          "🔹 User se integer aur string input lo.",
-          "🔹 + operator ka use karo aur output analyze karo.",
-          "🔹 Result return karo.",
+          "🔹 User se integer aur string input lo",
+          "🔹 + operator ka use karo aur output analyze karo",
+          "🔹 Result return karo"
         ],
+
         solution: {
           methods: [
             {
-              method: "Using + Operator (String Concatenation)",
+              method: "Method 1: Using + Operator (String Concatenation)",
               approach: [
-                "String aur Number ko concatenate karne se Type Coercion hoti hai.",
-                "Result return karo.",
+                "🔹 String aur Number ko concatenate karne se Type Coercion hoti hai",
+                "🔹 Result return karo"
               ],
               code: `
-function sumAndMessage(num, message) {
-    return num + message;
-}
-
-// Example
-console.log(sumAndMessage(10, " is the result")); // Output: "10 is the result"
-              `,
+      function sumAndMessage(num, message) {
+          return num + message;
+      }
+      
+      // Test cases
+      console.log(sumAndMessage(10, " is the result")); // Output: "10 is the result"
+      console.log(sumAndMessage(42, " answers"));       // Output: "42 answers"
+      console.log(sumAndMessage(7, ""));               // Output: "7"`,
               explanation: [
-                "🔹 + operator integer ko string me convert kar deta hai.",
-                "🔹 Result return kiya.",
-              ],
-            },
+                "🔹 + operator integer ko string me convert kar deta hai",
+                "🔹 String concatenation perform hoti hai",
+                "🔹 Final result string type ka hota hai"
+              ]
+            }
           ],
+          output: `
+      Example Output:
+      Input: num = 10, message = " is the result"
+      Output: "10 is the result"
+      
+      Input: num = 42, message = " answers"
+      Output: "42 answers"
+      
+      Input: num = 7, message = ""
+      Output: "7"`
         },
+
         practiceProblems: [
-          "🔹 Different data types ke saath concatenation check karo.",
+          "🔹 Different data types ke saath concatenation check karo",
+          "🔹 Edge cases handle karo (null, undefined, NaN)",
+          "🔹 Template literals ka use karke string formatting karo",
+          "🔹 Multiple values ko concatenate karne ka function likho"
         ],
+
         interviewQuestions: [
-          "🔹 JavaScript me implicit type conversion kaise hota hai?",
-          "🔹 Concatenation aur addition me difference kya hai?",
+          "❓ JavaScript me implicit type conversion kaise hota hai?",
+          "❓ String concatenation aur numeric addition me kya difference hai?",
+          "❓ + operator ke different use cases kya hain?",
+          "❓ Type coercion ko avoid karne ke liye kya best practices hain?"
         ],
+
         comparisonTable: [
           {
             approach: "Using + Operator",
             timeComplexity: "O(1)",
             spaceComplexity: "O(1)",
             pros: "Simple and efficient",
-            cons: "Limited to two numbers",
-          },
+            cons: "Type coercion can be unpredictable"
+          }
         ],
+
         conclusion: [
-          "🔹 JavaScript me + operator Type Coercion karta hai jab ek string aur ek integer combine hote hain.",
-        ],
+          "🔹 JavaScript me + operator type coercion karta hai jab string aur number combine hote hain",
+          "🔹 String concatenation predictable behavior follow karti hai",
+          "🔹 Type safety ke liye explicit conversion better ho sakta hai"
+        ]
       },
       // Q-4. Greet the User
       {
@@ -507,7 +669,7 @@ You entered: 42
           "🔹 UI-based input ke liye HTML forms ka use karna behtar hota hai."
         ],
       },
-      // Q-6. Swap Two Variables via 3 Methods
+      // Q-6. Swap Two Variables
       {
         title: "Swap Two Variables via 3 Methods",
         description: "Do variables ki values ko swap karna ek common programming task hai. Hum alag-alag tarikon ka istemal karke values ko swap karne ke methods dekhenge.",
@@ -3110,8 +3272,6 @@ repeatHello(5);
           "🔹 User experience aur performance ke basis par best method select karni chahiye."
         ]
       }
-      ,
-
     ],
   }
 ];

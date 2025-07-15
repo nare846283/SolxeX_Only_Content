@@ -2,11 +2,17 @@ export const beginnerProjects = [
   {
     category: "Basic JavaScript Projects",
     projects: [
+      // 1. Color Changer App 🎨
       {
         title: "Color Changer App 🎨",
         concepts: "Click event, DOM Manipulation, Event Handling",
         description: "Color Changer App ek simple aur interactive JavaScript project hai jo DOM manipulation aur event handling ka basic concept sikhata hai. Iss project me ek button click karne par background color randomly change hota hai.",
-
+        banner: {
+          imageUrl: "https://plus.unsplash.com/premium_photo-1741996431660-3736cb7e238b?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          sourceCode: "https://github.com/solxex/JavaScript-Projects/tree/main/color-changer",
+          demoLink: "https://solxex-color-changer.netlify.app/",
+          techStack: ["HTML", "CSS", "JavaScript"]
+        },
         features: [
           "✅ Button click karne par background color change hota hai.",
           "✅ Random color generator ka use hota hai.",
@@ -139,6 +145,7 @@ function getRandomColor() {
           "🎯 Isme aur naye features add karke isse aur advance bana sakte ho! 🚀"
         ],
       },
+      // 2. Image Changer App
     ],
   },
 ];

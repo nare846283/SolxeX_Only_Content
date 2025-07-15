@@ -100,7 +100,7 @@ const Navbar = () => {
 
      {/* ✅ Small Screen Navbar */}
         <nav
-          className="sm:hidden z-20 fixed top-0 left-0 w-full flex items-center justify-between px-4 py-8 transition-all duration-300 bg-transparent"
+          className="sm:hidden z-50 fixed top-0 left-0 w-full flex items-center justify-between px-4 py-8 transition-all duration-300 bg-transparent"
           style={{ color: textColor }}
         >
           {/* ✅ Logo (Left for Home/Projects/Problems, Center for Sidebar Pages) */}
@@ -124,17 +124,30 @@ const Navbar = () => {
       </nav>
 
       {/* ✅ Small Screen Navigation Links */}
-      <ul className="sm:hidden sm:fixed flex justify-center space-x-6 mt-16 ml-2 py-2 px-6 rounded-2xl absolute bottom-4 left-1/2 -translate-x-1/2 "
-        style={{ background: navbarBg, color: textColor }}
+      <ul className="z-50 sm:hidden fixed bottom-4 left-1/2 -translate-x-1/2 flex justify-center space-x-6 py-2 px-6 rounded-2xl"
+        style={{ 
+          background: navbarBg, 
+          color: textColor,
+          boxShadow: '0 2px 20px rgba(0,0,0,0.1)' 
+        }}
       >
         <motion.li whileHover={{ scale: 1.1 }} transition={{ duration: 0.5 }}>
-          <NavLink to="/" >Home</NavLink>
+          <NavLink to="/" className="text-white font-medium">Home</NavLink>
         </motion.li>
 
-        {/* ✅ Projects & Problems Dropdowns */}
+        {/* ✅ Projects & Problems Links */}
         {["Projects", "Problems"].map((section, idx) => (
-          <motion.li key={idx} className="relative group" whileHover={{ scale: 1.1 }} transition={{ duration: 0.5 }}>
-            <NavLink to={`/${section.toLowerCase()}`} className="text-white">{section}</NavLink>
+          <motion.li key={idx} 
+            className="relative group" 
+            whileHover={{ scale: 1.1 }} 
+            transition={{ duration: 0.5 }}
+          >
+            <NavLink 
+              to={`/${section.toLowerCase()}`} 
+              className="text-white font-medium"
+            >
+              {section}
+            </NavLink>
           </motion.li>
         ))}
       </ul>
